@@ -25,7 +25,7 @@ defaultFeaturedImage = "img/default.jpg" # used as default for featured images i
 # smartTOCHideUnfocusedChildren = true
 
 [header]
-  layout = "fixed-fill-blur" # valid options: basic, fixed, fixed-fill, fixed-fill-blur
+  layout = "fixed" # valid options: basic, fixed, fixed-fill, fixed-fill-blur
 
 [footer]
   showMenu = true
@@ -55,7 +55,7 @@ defaultFeaturedImage = "img/default.jpg" # used as default for featured images i
   heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   layoutBackgroundBlur = true # only used when heroStyle equals background or thumbAndBackground
   layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
-  showBreadcrumbs = false
+  showBreadcrumbs = true
   showDraftLabel = true
   showEdit = true
   editURL = "https://github.com/scottmckendry/blog/"
@@ -79,7 +79,7 @@ defaultFeaturedImage = "img/default.jpg" # used as default for featured images i
   layoutBackgroundBlur = true # only used when heroStyle equals background or thumbAndBackground
   layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
   showBreadcrumbs = false
-  showSummary = false
+  showSummary = true
   showViews = false
   showLikes = false
   showTableOfContents = false

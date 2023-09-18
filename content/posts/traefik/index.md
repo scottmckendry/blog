@@ -1,8 +1,13 @@
 ---
 title: "Traefik - SSL All The Things!"
-date: 2021-01-01T00:00:00+00:00
-tags: ["docker", "traefik", "ssl", "reverse-proxy"]
+date: 202-01-23T00:00:00+00:00
+tags: ["docker", "traefik" ] 
+summary: "Put SSL/HTTPS on all of your Web Services with Traefik Reverse Proxy 🚦"
 ---
+{{< lead >}}
+Put SSL/HTTPS on all of your Web Services with Traefik Reverse Proxy 🚦
+{{< /lead >}}
+
 If you're like me and run multiple services through Docker containers on your home lab server, you've likely found yourself struggling to remember the port numbers you assigned to a given service.
 
 You may have also felt the 'Not Secure' warning beckoning you from the URL bar every time you open an application, begging for SSL.
@@ -126,16 +131,13 @@ networks:
   traefik:
     external: true
 ```
-
-
-
-💡
-
+{{< alert icon=lightbulb >}}
 **IMPORTANT:** Make sure you add a DNS entry for your Traefik container and point it to your public IP address. You'll also need to configure port forwarding rules for ports 80 and 443 on your router to your server.  
-  
-Help:  
-[How Do I Create Sub-Sub-Domain on Cloudflare DNS?](https://stackoverflow.com/questions/30802595/how-do-i-create-sub-sub-domain-on-cloudflare-dns?ref=scottmckendry.tech)  
-[How to Forward Ports on Your Router](https://www.howtogeek.com/66214/how-to-forward-ports-on-your-router/?ref=scottmckendry.tech)
+ 
+**Help:**
+- [How Do I Create Sub-Sub-Domain on Cloudflare DNS?](https://stackoverflow.com/questions/30802595/how-do-i-create-sub-sub-domain-on-cloudflare-dns?ref=scottmckendry.tech)  
+- [How to Forward Ports on Your Router](https://www.howtogeek.com/66214/how-to-forward-ports-on-your-router/?ref=scottmckendry.tech)
+{{< /alert >}}
 
 Check your file carefully and make sure to replace any dummy variables, paths and domains!
 
@@ -159,24 +161,25 @@ docker network create traefik
 
 Now we can start our Traefik container.
 
-💡
-
+{{< alert icon=lightbulb >}}
 To start and restart containers, run the following from the directory containing your docker-compose.yaml file.  
-  
-_**docker-compose up -d --force-recreate**_  
-  
-The --force-recreate flag restarts the container regardless of any changes to the compose file.
+
+`docker-compose up -d --force-recreate` 
+
+The `--force-recreate` flag restarts the container regardless of any changes to the compose file.
+{{< /alert >}}
 
 Now that we've started the container we should be able to access the Traefik dashboard by going to "traefik.subdomain.example.com". If everything is configured correctly, you should see the dashboard below:
 
-![](Archive/Attachments/image-1-1.png)
+![img](/img/traefik/traefik-dashboard.png)
 
 You'll also see a valid certificate in the address bar. Congratulations, you're now serving your first HTTPS web application.
 
-### Adding Containers
+## Adding Containers
 
 Now that Traefik is up and running, we can start adding services behind it. As an example, we'll use the [Linuxserver.io's openvscode-server](https://hub.docker.com/r/linuxserver/openvscode-server?ref=scottmckendry.tech) docker image.
 
+### Old Config
 The default docker-compose file is below:
 
 ```yaml
@@ -195,12 +198,9 @@ services:
     restart: unless-stopped
 ```
 
-
-
-Old config
-
 This will serve a VS Code server locally on http://[YourServerIp]:3000. With a few tweaks, we can serve it on our own subdomain with SSL.
 
+### New Config
 With a few updates, we can 'Traefik-ify' the container:
 
 ```yaml
@@ -238,13 +238,7 @@ networks:
     external: true
 ```
 
-
-
-New config
-
-💡
-
-Don't forget to add your DNS entry for 'code.subdomain'!
+> 💡 Don't forget to add your DNS entry for 'code.subdomain'!
 
 Start the container and navigate to the new URL. Great! Now we have a template we can apply to all of our containers.
 
@@ -254,7 +248,7 @@ But what if we want to expose a service to the public internet? We can't leave t
 
 Middlewares allow Traefik to manipulate requests before they reach your services. They can even outright deny access altogether. There are several middlewares available in the Traefik Plugin Catalog.
 
-![](Archive/Attachments/image-2-2.png)
+![img](/img/traefik/middlewares.png)
 
 The three we're going to implement to tighten up security on our services are:
 
@@ -285,10 +279,9 @@ http:
 ```
 
 
-
-💡
-
+{{< alert icon=lightbulb >}}
 You can create your own password hash using "htpasswd" in a bash shell.
+{{< /alert >}}
 
 To add our newly created middleware to our container, we add the following label:
 
@@ -297,10 +290,9 @@ To add our newly created middleware to our container, we add the following label
 ```
 
 
-
 Restart the container for our changes to take effect. When you reopen code server, you get a prompt to enter your username and password.
 
-![](Archive/Attachments/image-3.png)
+![img](/img/traefik/basic-auth.png)
 
 If your IP is not whitelisted, you'll get a 403 forbidden error.
 
@@ -326,8 +318,6 @@ This can also be done in the dynamic config.yaml file. First, we'll want to defi
           X-Forwarded-Proto: https
 ```
 
-
-
 Without going into great detail, the above headers should allow most services to work behind Traefik. At least, I haven't run into any issues yet.
 
 Now we can add an external service. I'm going to add my router's admin page. This can go beneath our default headers middleware:
@@ -351,7 +341,6 @@ Now we can add an external service. I'm going to add my router's admin page. Thi
         servers:
           - url: "https://192.168.1.1"
 ```
-
 
 
 As you can see, we've also added our other middleware as well as default headers.
@@ -414,3 +403,5 @@ And that's it!
 We've now successfully configured Traefik, a container and an external service all with valid SSL certificates.
 
 My full config is available on my Github:
+
+{{< github repo="scottmckendry/traefik" >}}

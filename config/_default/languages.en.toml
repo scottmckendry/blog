@@ -7,9 +7,9 @@ title = "Scott McKendry"
   displayName = "EN"
   isoCode = "en"
   rtl = false
-  dateFormat = "January 2, 2006"
-  logo = "img/logo.png"
-  # secondaryLogo = "img/secondary-logo.png"
+  dateFormat = "Jan 2, 2006"
+  logo = "img/logo-light.png"
+  secondaryLogo = "img/logo.png"
   # description = "My awesome website"
   # copyright = "Copy, _right?_ :thinking_face:"
 
