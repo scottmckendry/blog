@@ -1,6 +1,6 @@
 ---
 title: "Traefik - SSL All The Things!"
-date: 202-01-23T00:00:00+00:00
+date: 2023-01-23T00:00:00+00:00
 tags: ["docker", "traefik" ] 
 summary: "Put SSL/HTTPS on all of your Web Services with Traefik Reverse Proxy 🚦"
 ---
