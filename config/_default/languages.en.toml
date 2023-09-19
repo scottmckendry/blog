@@ -10,7 +10,7 @@ title = "Scott McKendry"
   dateFormat = "Jan 2, 2006"
   logo = "img/logo.webp"
   secondaryLogo = "img/logo-light.webp"
-  # description = "My awesome website"
+  description = "Scott McKendry's personal blog. A place to share my thoughts and ideas."
   # copyright = "Copy, _right?_ :thinking_face:"
 
 [author]
