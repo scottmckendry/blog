@@ -18,7 +18,7 @@ If you followed my [Traefik configuration guide](https://scottmckendry.tech/tra
 
 [FowardAuth](https://doc.traefik.io/traefik/middlewares/http/forwardauth/?ref=scottmckendry.tech) is Traefik's built-in solution for forwarding Authentication to an external auth service. OAuth & OIDC services are supported. Previously, I had set this up with Google SSO using Google's Cloud API. In this guide, we'll be configuring SSO using Azure Active Directory.
 
-![img](/img/traefik-az-sso/forward-auth.png)
+![img](/img/traefik-az-sso/forward-auth.webp)
 
 We will supplement the ForwardAuth middleware with thomseddon's [Forward Auth docker image](https://github.com/thomseddon/traefik-forward-auth?ref=scottmckendry.tech). This will be our dedicated endpoint for all authentication requests.
 
@@ -28,7 +28,7 @@ From your DNS provider, add a new entry for your auth endpoint. I suggest using 
 
 Here's the entry I've added in Cloudflare:
 
-![img](/img/traefik-az-sso/dns.png)
+![img](/img/traefik-az-sso/dns.webp)
 
 Nyx is the subdomain configured with the SANS certificate in my Traefik guide
 
@@ -114,7 +114,7 @@ To require AAD authentication on a container or service, just update your middle
 
 If you see the message below, the URL you're trying to access is not in the App Registrations URIs:
 
-![img](/img/traefik-az-sso/error.png)
+![img](/img/traefik-az-sso/error.webp)
 
 Also check that the URI is in `https://[serviceUrl]/_oauth` format
 
@@ -122,7 +122,7 @@ Also check that the URI is in `https://[serviceUrl]/_oauth` format
 
 Now if you go to one of the hosts you've configured for auth, you will be swiftly redirected to your organisation's login page:
 
-![img](/img/traefik-az-sso/login.png)
+![img](/img/traefik-az-sso/login.webp)
 
 Because we've configured a persistent cookie across our domain, you'll only need to sign in once. Pretty neat!
 

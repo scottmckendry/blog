@@ -46,7 +46,7 @@ Now we can add .env to our .gitignore file and commit with the confidence our pa
 
 Great! No more secrets in the source repo. But therein lies the problem.
 
-![img](/img/bitwarden-creds/creds.png)
+![img](/img/bitwarden-creds/creds.webp)
 
 If I need to quickly rebuild my containers on a new host. I need to clone the repository, and then painstakingly enter all the credentials into the .env file before spinning up any of the containers.
 

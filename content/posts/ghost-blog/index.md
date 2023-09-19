@@ -8,7 +8,7 @@ url: "/ghost-blog/"
 
 I recently decided to have another crack at blogging. Having gone through the pain of setting up a WordPress site in the past and not enjoying the process of writing on the platform at all, ultimately giving up, I knew I had to find an alternative. Enter Ghost.
 
-![img](/img/ghost-blog/ghost-logo.jpeg)
+![img](/img/ghost-blog/ghost-logo.webp)
 
 Ghost appeared the be the standout candidate. It ticked all the boxes.
 
@@ -25,7 +25,7 @@ I opted to host Ghost in a docker container on my home server. [Ghost's Docker 
 
 I'm using [Traefik](https://scottmckendry.tech/traefik-ssl-all-the-things/) for routing and SSL. Meaning I can host multiple blogs and other services if I so choose, all from one public IP.
 
-![](/img/ghost-blog/traefik.png)
+![](/img/ghost-blog/traefik.webp)
 
 Ghost also offers its own [hosting service](https://ghost.org/pricing/?ref=scottmckendry.tech), if self-hosting isn't your thing.
 
@@ -84,7 +84,7 @@ I also did the same for the Sign In and Subscribe buttons in the navigation (dea
 
 Up until recently, Ghost required a third-party integration for comments. This is [no longer the case](https://ghost.org/changelog/native-comments//?ref=scottmckendry.tech) as of August 2022.
 
-![img](/img/ghost-blog/comments.png)
+![img](/img/ghost-blog/comments.webp)
 
 Strangely, comments are not enabled by default. I turned these on from the Admin interface under Settings → Membership.
 
@@ -92,7 +92,7 @@ Strangely, comments are not enabled by default. I turned these on from the Admin
 
 Ghost has code snippets out of the box but no syntax highlighting. It's not much to look at:
 
-![img](/img/ghost-blog/snippet.png)
+![img](/img/ghost-blog/snippet.webp)
 
 I've supplemented highlighting using [Prism](https://prismjs.com/?ref=scottmckendry.tech). Here's the same code again, but with Prism enabled:
 

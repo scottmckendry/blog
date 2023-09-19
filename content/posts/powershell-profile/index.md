@@ -25,7 +25,7 @@ The first thing I wanted to change was the prompt. The default prompt is a bit b
 
 I've done this using a third-party module called [Oh-My-Posh](https://ohmyposh.dev/?ref=scottmckendry.tech). This module provides a number of themes and allows you to customize the prompt to your liking. I've chosen the [Material](https://ohmyposh.dev/docs/themes?ref=scottmckendry.tech#material) theme.
 
-![prompt](/img/powershell-profile/prompt.png)
+![prompt](/img/powershell-profile/prompt.webp)
 
 Material Oh My Posh theme ins Windows Terminal
 
@@ -39,7 +39,7 @@ This allows me to make changes to the profile on either machine and have those c
 
 Within the profile, there is a function that runs each time the profile is loaded. This checks to see if the local git repository is up to date with the remote repository. If it's not, a friendly message is displayed to remind me to pull the latest changes (another function included in the profile).
 
-![git](/img/powershell-profile/git-integration.png)
+![git](/img/powershell-profile/git-integration.webp)
 
 ## Support For All Session Types
 

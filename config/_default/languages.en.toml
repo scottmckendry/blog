@@ -8,14 +8,14 @@ title = "Scott McKendry"
   isoCode = "en"
   rtl = false
   dateFormat = "Jan 2, 2006"
-  logo = "img/logo.png"
-  secondaryLogo = "img/logo-light.png"
+  logo = "img/logo.webp"
+  secondaryLogo = "img/logo-light.webp"
   # description = "My awesome website"
   # copyright = "Copy, _right?_ :thinking_face:"
 
 [author]
   name = "Scott McKendry"
-#   image = "img/blowfish_logo.png"
+#   image = "img/blowfish_logo.webp"
   headline = "DevOps Engineer"
 #   bio = "A little bit about you"
   links = [

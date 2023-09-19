@@ -7,11 +7,11 @@ url: "/diy-network-rack/"
 ---
 My custom, cost-effective DIY Network Rack build 🔧
 
-![finished](/img/diy-rack/finished.jpg)
+![finished](/img/diy-rack/finished.webp)
 
 Having recently outgrown the small network cabinet that was installed when our house was built, I have been storing all of my network equipment on a shelf in the spare bedroom wardrobe.
 
-![oldSetup](/img/diy-rack/old-setup.jpg "The old setup")
+![oldSetup](/img/diy-rack/old-setup.webp "The old setup")
 
 Not really happy with the solution, I decided to invest in a rack. My Criteria:
 
@@ -28,43 +28,43 @@ After looking at a few other options and finding nothing suitable, I decided to 
 
 I found some standalone rack strips from Penn Elcom:
 
-![rackStrips](/img/diy-rack/rack-strips.png)
+![rackStrips](/img/diy-rack/rack-strips.webp)
 
 After a couple of hours in SketchUp, I came up with this:
 
-![rackDesign](/img/diy-rack/rack-design.png)
+![rackDesign](/img/diy-rack/rack-design.webp)
 
 I then enlisted the help of my dad, a qualified engineer and skilled fabricator and got to work.
 
 ### The build
 
-![start](/img/diy-rack/start.jpeg "Started by 'de-rusting' a length of 25mm square tubing\. This particular length had been kept outside so needed some love.")
+![start](/img/diy-rack/start.webp "Started by 'de-rusting' a length of 25mm square tubing\. This particular length had been kept outside so needed some love.")
 
-![mitre](/img/diy-rack/mitre.jpeg "Mitre cut and welded length for the top and bottom of the frame\.")
+![mitre](/img/diy-rack/mitre.webp "Mitre cut and welded length for the top and bottom of the frame\.")
 
-![welding](/img/diy-rack/welding.jpeg "Welding the top and bottom together\.")
+![welding](/img/diy-rack/welding.webp "Welding the top and bottom together\.")
 
-![eod-1](/img/diy-rack/eod-1.jpeg "End of the first day - mostly finished frame\.")
+![eod-1](/img/diy-rack/eod-1.webp "End of the first day - mostly finished frame\.")
 
-![castors](/img/diy-rack/castors.jpeg "Start of the second day - Castors are now welded on and the timber for the top is picked out\.")
+![castors](/img/diy-rack/castors.webp "Start of the second day - Castors are now welded on and the timber for the top is picked out\.")
 
-![top](/img/diy-rack/top.jpeg "Timber top cut and joined\. This is reclaimed [Rimu](https://en.wikipedia.org/wiki/Dacrydium_cupressinum?ref=scottmckendry.tech) timber\.")
+![top](/img/diy-rack/top.webp "Timber top cut and joined\. This is reclaimed [Rimu](https://en.wikipedia.org/wiki/Dacrydium_cupressinum?ref=scottmckendry.tech) timber\.")
 
-![rackMounts](/img/diy-rack/rack-mounts.jpeg "Hex nuts welded to the frame for mounting the rack strips")
+![rackMounts](/img/diy-rack/rack-mounts.webp "Hex nuts welded to the frame for mounting the rack strips")
 
-![testFit](/img/diy-rack/test-fit.jpeg "Rack strip test fit\.")
+![testFit](/img/diy-rack/test-fit.webp "Rack strip test fit\.")
 
-![prep](/img/diy-rack/prep.jpeg "Frame ready for paint\.")
+![prep](/img/diy-rack/prep.webp "Frame ready for paint\.")
 
-![firstCoat](/img/diy-rack/first-coat.jpeg "First coat of paint\.")
+![firstCoat](/img/diy-rack/first-coat.webp "First coat of paint\.")
 
-![paintDone](/img/diy-rack/paint-done.jpeg "Frame painted and top test fit\.")
+![paintDone](/img/diy-rack/paint-done.webp "Frame painted and top test fit\.")
 
 ### Finished Rack
 
 Here's the rack finished with all of my gear installed:
 
-![finished](/img/diy-rack/finished.jpg)
+![finished](/img/diy-rack/finished.webp)
 
 Only the top 3U are populated currently, leaving heaps of room for more equipment in the future.
 

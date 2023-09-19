@@ -172,7 +172,7 @@ The `--force-recreate` flag restarts the container regardless of any changes to 
 
 Now that we've started the container we should be able to access the Traefik dashboard by going to "traefik.subdomain.example.com". If everything is configured correctly, you should see the dashboard below:
 
-![img](/img/traefik/traefik-dashboard.png)
+![img](/img/traefik/traefik-dashboard.webp)
 
 You'll also see a valid certificate in the address bar. Congratulations, you're now serving your first HTTPS web application.
 
@@ -249,7 +249,7 @@ But what if we want to expose a service to the public internet? We can't leave t
 
 Middlewares allow Traefik to manipulate requests before they reach your services. They can even outright deny access altogether. There are several middlewares available in the Traefik Plugin Catalog.
 
-![img](/img/traefik/middlewares.png)
+![img](/img/traefik/middlewares.webp)
 
 The three we're going to implement to tighten up security on our services are:
 
@@ -293,7 +293,7 @@ To add our newly created middleware to our container, we add the following label
 
 Restart the container for our changes to take effect. When you reopen code server, you get a prompt to enter your username and password.
 
-![img](/img/traefik/basic-auth.png)
+![img](/img/traefik/basic-auth.webp)
 
 If your IP is not whitelisted, you'll get a 403 forbidden error.
 

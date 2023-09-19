@@ -33,7 +33,7 @@ To allow the GitHub action to push changes to the destination repository, you'll
 - Click on **Generate new token**.
 - Give your token a name and select the two repositories you want to keep in sync.
 
-![IMG](https://scottmckendry.tech/content/images/2023/09/image-8.png)
+![IMG](https://scottmckendry.tech/content/images/2023/09/image-8.webp)
 
 Assign the following **Repository Permissions**:
 
