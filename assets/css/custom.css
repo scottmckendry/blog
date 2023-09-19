@@ -1,5 +1,5 @@
 /* Hide header text */
-body > div > div > div > div > nav > a.text-gray-500 {
+body > div > div > nav > a.text-gray-500 {
   display: none;
 }
 

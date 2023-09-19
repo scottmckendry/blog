@@ -3,6 +3,7 @@ title: "Cloud Failover for \"Maintenance\" Using Azure Static Web App & Runbook"
 date: 2023-02-04T00:00:00-00:00
 tags: ["azure", "blog"]
 summary: "My friendly status page for inevitable outages 🚧"
+url: "/maintenance-web-app-azure/"
 ---
 
 I self-host this website at home. I run a single server with no local replication. That means if my server goes down, so does my website.

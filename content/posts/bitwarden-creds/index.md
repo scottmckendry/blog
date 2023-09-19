@@ -3,6 +3,7 @@ title: "A Makeshift Bitwarden Credential Sync Solution for Docker"
 date: 2023-02-02T00:00:00-00:00
 tags: ["docker", "bitwarden" ]
 summary: "A simple approach for managing docker-compose passwords and keys 🔑"
+url: "/docker-secret-management/"
 ---
 
 I run several docker containers - all with docker-compose. All of my compose files are in a GitHub repository. However, I'm forced to keep this repository private due to some of the compose files containing passwords and API keys in plain text.
@@ -11,11 +12,12 @@ The obvious solution is to remove the credentials from the compose and use .env 
 
 Let's say, for example, your docker directory looks like this:
 
-```treeview
-docker
-`-- myContainer
-    |-- docker-compose.yaml
-    `-- .env
+```go
+~/
+└── docker/
+    └── myContainer/
+        ├── docker-compose.yaml
+        └── .env
 ```
 
 We can store passwords and other secrets in the .env file:
@@ -58,31 +60,31 @@ After playing around with [Bitwarden-CLI](https://bitwarden.com/help/cli/?ref=s
 
 Before:
 
-```treeview
-~
-|-- docker
-|   |-- container1
-|   |   `-- docker-compose.yaml
-|   `-- container2
-|   	`-- docker-compose.yaml
-`-- Bitwarden
-	`-- BitwardenSync.sh 
+```go
+~/
+├── docker/
+│   ├── container1/
+│   │   └── docker-compose.yaml
+│   └── container2/
+│       └── docker-compose.yaml
+└── Bitwarden/
+    └── BitwardenSync.sh
 ```
 
 After:
 
-```treeview
-~
-|-- docker
-|   |-- container1
-|   |   |-- docker-compose.yaml
-|   |   `-- .env (copy)
-|   `-- container2
-|       |-- docker-compose.yaml
-|       `-- .env (copy)
-`-- Bitwarden
-    |-- BitwardenSync.sh
-    `-- .env  (master)
+```go
+~/
+├── docker/
+│   ├── container1/
+│   │   ├── docker-compose.yaml
+│   │   └── .env (copy)
+│   └── container2/
+│       ├── docker-compose.yaml
+│       └── .env (copy)
+└── Bitwarden/
+    ├── BitwardenSync.sh
+    └── .env (master)
 ```
 
 Credentials are added to .env files in `[name]=[password]` format.

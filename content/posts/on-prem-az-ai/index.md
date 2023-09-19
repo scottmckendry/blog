@@ -3,6 +3,7 @@ title: "Monitoring On-Premise Web Applications with Azure App Insights"
 date: 2023-02-05T00:00:00-00:00
 tags: ["azure"]
 summary: "Improving upon my web failover solution with the help of App Insights and Availability Monitoring 📊"
+url: "/web-monitoring/"
 ---
 
 In my [recent post](https://scottmckendry.tech/maintenance-web-app-azure/) about outages and failover, I went down the rabbit hole of trying to set up a free solution using Azure that could hold the fort while I sorted out the issues at my end.

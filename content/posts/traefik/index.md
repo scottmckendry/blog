@@ -3,6 +3,7 @@ title: "Traefik - SSL All The Things!"
 date: 2023-01-23T00:00:00+00:00
 tags: ["docker", "traefik" ] 
 summary: "Put SSL/HTTPS on all of your Web Services with Traefik Reverse Proxy 🚦"
+url: "/traefik-setup/"
 ---
 {{< lead >}}
 Put SSL/HTTPS on all of your Web Services with Traefik Reverse Proxy 🚦
@@ -24,19 +25,19 @@ This guide assumes Docker Compose is being used to manage containers. It also as
 
 For starters, create the following file structure on your docker host. The rest of the guide assumes your files are in this structure:
 
-```treeview
-~
-|-- docker
-|   |-- traefik
-|   |   `-- docker-compose.yml
-|   `--  code-server
-|   	`-- docker-compose.yml
-`-- configs
-	`-- traefik
-		|-- acme.json
-		|-- traefik.yml
-		`-- dynamic
-			`-- config.yml
+```go
+~/
+├── docker/
+│   ├── traefik/
+│   │   └── docker-compose.yml
+│   └── code-server/
+│       └── docker-compose.yml
+└── configs/
+    └── traefik/
+        ├── acme.json
+        ├── traefik.yml
+        └── dynamic/
+            └── config.yml
 ```
 
 

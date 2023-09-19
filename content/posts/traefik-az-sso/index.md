@@ -3,6 +3,7 @@ title: "Traefik - Replacing Basic Authentication with Azure SSO Using ForwardAut
 date: 2023-01-29T00:00:00-00:00
 tags: ["traefik", "azure", "docker"]
 summary: "Configuring SSO for Traefik using Azure Active Directory 🔓"
+url: "/traefik-replacing-basic-authentication-with-sso/"
 ---
 
 Out of the box, Traefik has a simple basic auth middleware that can be used for proxied apps that don't have their own authentication solution.

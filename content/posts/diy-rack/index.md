@@ -3,6 +3,7 @@ title: "DIY Network/Server Rack"
 date: 2023-02-08T00:00:00-00:00
 tags: ["hardware"]
 summary: "My custom, cost-effective DIY Network Rack build 🔧"
+url: "/diy-network-rack/"
 ---
 My custom, cost-effective DIY Network Rack build 🔧
 
