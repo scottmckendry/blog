@@ -27,4 +27,10 @@ My personal blog, built with [Hugo](https://gohugo.io/) using the Blowfish theme
 
 ## Latest Posts 📬
 <!-- BLOG-POST-LIST:START -->
+- [How I Sync My Dotfiles Between Windows and Linux Using GitHub Actions](https://scottmckendry.tech/how-i-sync-my-dotfiles-between-windows-and-linux-using-github-actions/)
+- [The Ultimate PowerShell Profile](https://scottmckendry.tech/the-ultimate-powershell-profile/)
+- [DIY Network/Server Rack](https://scottmckendry.tech/diy-network-rack/)
+- [Monitoring On-Premise Web Applications with Azure App Insights](https://scottmckendry.tech/web-monitoring/)
+- [Cloud Failover for &quot;Maintenance&quot; Using Azure Static Web App &amp; Runbook](https://scottmckendry.tech/maintenance-web-app-azure/)
+- [A Makeshift Bitwarden Credential Sync Solution for Docker](https://scottmckendry.tech/docker-secret-management/)
 <!-- BLOG-POST-LIST:END -->
