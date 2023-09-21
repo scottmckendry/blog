@@ -23,7 +23,8 @@
   </a>
 </p>
 
-My personal blog, built with [Hugo](https://gohugo.io/) using the Blowfish theme. Hosted on [GitHub Pages](https://pages.github.com/).
+My personal blog. Built with [Hugo](https://gohugo.io/) and [Blowfish](https://github.com/nunocoracao/blowfish). Hosted on [GitHub Pages](https://pages.github.com/).
+
 
 ## Latest Posts 📬
 <!-- BLOG-POST-LIST:START -->
