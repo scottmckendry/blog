@@ -15,7 +15,7 @@ You may have also felt the 'Not Secure' warning beckoning you from the URL bar e
 
 No more!
 
-Traefik is here to solve all your routing and SSL issues. Not just for your docker containers but all of your services, even the ones running on a separate server entirely - like your router's web UI.
+Traefik is here to solve all your routing and SSL issues. Not just for your docker containers but all of your services, even the ones running on a separate server entirely – like your router's web UI.
 
 ### Before we begin
 
@@ -281,7 +281,7 @@ http:
 
 
 {{< alert icon=lightbulb >}}
-You can create your own password hash using "htpasswd" in a bash shell.
+You can create your own password hash using `htpasswd` in a bash shell.
 {{< /alert >}}
 
 To add our newly created middleware to our container, we add the following label:
@@ -403,6 +403,6 @@ And that's it!
 
 We've now successfully configured Traefik, a container and an external service all with valid SSL certificates.
 
-My full config is available on my Github:
+My full config is available on my GitHub:
 
 {{< github repo="scottmckendry/traefik" >}}

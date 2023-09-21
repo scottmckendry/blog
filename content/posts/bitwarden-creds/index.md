@@ -6,7 +6,7 @@ summary: "A simple approach for managing docker-compose passwords and keys 🔑"
 url: "/docker-secret-management/"
 ---
 
-I run several docker containers - all with docker-compose. All of my compose files are in a GitHub repository. However, I'm forced to keep this repository private due to some of the compose files containing passwords and API keys in plain text.
+I run several docker containers – all with docker-compose. All of my compose files are in a GitHub repository. However, I'm forced to keep this repository private due to some compose files containing passwords and API keys in plain text.
 
 The obvious solution is to remove the credentials from the compose and use .env files instead. This allows me to pass in secrets as variables instead.
 
@@ -40,7 +40,7 @@ services:
 ```
 
 
-Now we can add .env to our .gitignore file and commit with the confidence our passwords are not exposed in a public repository.
+Now we can add `.env` to our `.gitignore` file and commit with the confidence our passwords are not exposed in a public repository.
 
 ### The Problem
 

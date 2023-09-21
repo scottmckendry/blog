@@ -10,8 +10,8 @@ I love tinkering with my operating system and tools. I find it a fun way to spen
 
 In my world, it's a mix of Windows and Linux, two worlds with their own unique flavours. **But I have a goal**: keep my configuration and settings as harmonious as possible. My current solution is to maintain two separate repositories:
 
-- [Windots](https://github.com/scottmckendry/windots?ref=scottmckendry.tech) - Windows
-- [Dots](https://github.com/scottmckendry/dots?ref=scottmckendry.tech) - Linux
+- [Windots](https://github.com/scottmckendry/windots?ref=scottmckendry.tech) – Windows
+- [Dots](https://github.com/scottmckendry/dots?ref=scottmckendry.tech) – Linux
 
 ## The Problem
 
@@ -33,13 +33,13 @@ To allow the GitHub action to push changes to the destination repository, you'll
 - Click on **Generate new token**.
 - Give your token a name and select the two repositories you want to keep in sync.
 
-![IMG](https://scottmckendry.tech/content/images/2023/09/image-8.webp)
+![img](/img/dotfile-sync/repos.webp)
 
 Assign the following **Repository Permissions**:
 
-- **Contents** - Read and write
-- **Actions** - Read only
-- **Metadata** - Read only
+- **Contents** – Read and write
+- **Actions** – Read only
+- **Metadata** – Read only
 
 After configuring the permissions, click **Generate token**, and copy the token to your clipboard.
 
@@ -91,8 +91,8 @@ Now when I make a change to my Neovim config on either platform, the pushed chan
 
 ## The Future
 
-More and more of my config is becoming platform agnostic. To add another file or folder in the sync, I just need to add another step to the workflow.
+More and more of my config is becoming platform-agnostic. To add another file or folder in the sync, I just need to add another step to the workflow.
 
 You can see the action "_in action_" below. Let me know what you think!
 
-{{< github repo="scottmckendry/WIndots">}}
+{{< github repo="scottmckendry/Windots">}}

@@ -10,7 +10,7 @@ I recently decided to have another crack at blogging. Having gone through the pa
 
 ![img](/img/ghost-blog/ghost-logo.webp)
 
-Ghost appeared the be the standout candidate. It ticked all the boxes.
+Ghost appeared to be the standout candidate. It ticked all the boxes.
 
 - Self-hosted ✅
 - Open Source ✅
@@ -55,7 +55,7 @@ Most of this could just by editing the Handlebar (.hbs) files in the theme's dir
     {{/unless}}
 {{/if}}
 ```
-I also did the same for the Sign In and Subscribe buttons in the navigation (deafult.hbs):
+I also did the same for the Sign In and Subscribe buttons in the navigation (default.hbs):
 
 ```hbs
 <div class="gh-head-actions">
@@ -111,7 +111,7 @@ namespace Program
 }
 ```
 
-Prism is lightweight JS and CSS that can be injected into your Ghost site. From Settings  → Code Injection, I added the following lines to the Site Header:
+Prism is lightweight JS and CSS that can be injected into your Ghost site. From Settings → Code Injection, I added the following lines to the Site Header:
 
 ```html
 <!--Prism Tomorrow Night Theme-->

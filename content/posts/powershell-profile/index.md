@@ -1,5 +1,5 @@
 ---
-title: "The Ultimite PowerShell Profile"
+title: "The Ultimate PowerShell Profile"
 date: 2023-07-16T00:00:00-00:00
 tags: ["powershell", "windows"]
 summary: "Putting the \"Power\" back into PowerShell with custom functions and aliases 💪"
@@ -7,7 +7,7 @@ url: "/the-ultimate-powershell-profile/"
 ---
 
 > A man is only as good as his tools.  
-> - [Emmert Wolf](https://dah.li/a/post/emmert-wolf?ref=scottmckendry.tech)
+> — <cite>[Emmert Wolf](https://dah.li/a/post/emmert-wolf?ref=scottmckendry.tech)</cite>
 
 A quote that is usually used in the context of construction, or Mechanical Engineering disciplines. Though, it's worth noting that this is equally important for Engineers and Technicians in the IT industry as well.
 
@@ -33,11 +33,11 @@ The prompt now shows the current directory, the git branch, and the time.
 
 ## GitHub Integration
 
-I use two machines for my day-to-day work. My laptop, and my desktop. I wanted to be able to easily sync my PowerShell profile between the two machines. In order to achieve this, I have included a setup script in the repository. This script will create a [symbolic link](https://learn.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/create-symbolic-links?ref=scottmckendry.tech) to the profile in the repository, and place it in the correct location.
+I use two machines for my day-to-day work. My laptop and my desktop. I wanted to be able to easily sync my PowerShell profile between the two machines. In order to achieve this, I have included a setup script in the repository. This script will create a [symbolic link](https://learn.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/create-symbolic-links?ref=scottmckendry.tech) to the profile in the repository, and place it in the correct location.
 
 This allows me to make changes to the profile on either machine and have those changes reflected on the other machine.
 
-Within the profile, there is a function that runs each time the profile is loaded. This checks to see if the local git repository is up to date with the remote repository. If it's not, a friendly message is displayed to remind me to pull the latest changes (another function included in the profile).
+Within the profile, there is a function that runs each time the profile is loaded. This checks to see if the local git repository is up-to-date with the remote repository. If it's not, a friendly message is displayed to remind me to pull the latest changes (another function included in the profile).
 
 ![git](/img/powershell-profile/git-integration.webp)
 
@@ -53,11 +53,11 @@ In order to support both environments for a consistent experience, a slightly di
 
 ## Linux-like Aliases
 
-Because I'm constantly switching between bash and PowerShell, I often get confused about which commands are (and aren't) already aliased. For example, [ls](https://manpages.ubuntu.com/manpages/focal/en/man1/ls.1.html?ref=scottmckendry.tech) is aliased to Get-ChildItem, but there is no equivalent for [touch](https://manpages.ubuntu.com/manpages/focal/man1/touch.1.html?ref=scottmckendry.tech).
+Because I'm constantly switching between bash and PowerShell, I often get confused about which commands are (and aren't) already aliased. For example, [`ls`](https://manpages.ubuntu.com/manpages/focal/en/man1/ls.1.html?ref=scottmckendry.tech) is aliased to `Get-ChildItem`, but there is no equivalent for [`touch`](https://manpages.ubuntu.com/manpages/focal/man1/touch.1.html?ref=scottmckendry.tech).
 
-I've added a number of custom functions to mimic (as closely as possible) the behaviour of their Linux counterparts. For example, [grep](https://manpages.ubuntu.com/manpages/focal/man1/grep.1.html?ref=scottmckendry.tech) is now an alias for my custom Find-String function, and [df](https://manpages.ubuntu.com/manpages/focal/man1/df.1.html?ref=scottmckendry.tech) is an alias for the built-in Get-Volume command.
+I've added a number of custom functions to mimic (as closely as possible) the behaviour of their Linux counterparts. For example, [`grep`](https://manpages.ubuntu.com/manpages/focal/man1/grep.1.html?ref=scottmckendry.tech) is now an alias for my custom Find-String function, and [`df`](https://manpages.ubuntu.com/manpages/focal/man1/df.1.html?ref=scottmckendry.tech) is an alias for the built-in Get-Volume command.
 
-My favourite addition is [su](https://manpages.ubuntu.com/manpages/focal/man1/su.1.html?ref=scottmckendry.tech), which is an alias for Start-AdminSession. This opens a new elevated Windows Terminal window.
+My favourite addition is [`su`](https://manpages.ubuntu.com/manpages/focal/man1/su.1.html?ref=scottmckendry.tech), which is an alias for `Start-AdminSession`. This opens a new elevated Windows Terminal window.
 
 ```powershell
 function Start-AdminSession {
@@ -73,7 +73,7 @@ function Start-AdminSession {
 
 When writing scripts, it's often necessary to store secrets. These could be passwords, API keys, or other sensitive information. In the past, I've haphazardly stored these in plain text variables. This is obviously not ideal, but it was the easiest way to get the job done.
 
-In order to create the lowest barrier to entry, I've created a function called **Get-OrCreateSecret**. This is a semi-interactive function that will prompt for a secret if it doesn't already exist. Now I only need one line in my scripts to get a secret.
+In order to create the lowest barrier to entry, I've created a function called **`Get-OrCreateSecret`**. This is a semi-interactive function that will prompt for a secret if it doesn't already exist. Now I only need one line in my scripts to get a secret.
 
 Using the [SecretManagement & SecretStore](https://devblogs.microsoft.com/powershell/secretmanagement-and-secretstore-are-generally-available/?ref=scottmckendry.tech) modules, the secret is encrypted and stored in a local vault. This means that the secret is only accessible to the user that created it, on the machine that it was created on. Much better than storing it in plain text!
 

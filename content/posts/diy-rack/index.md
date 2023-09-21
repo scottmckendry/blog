@@ -15,8 +15,8 @@ Having recently outgrown the small network cabinet that was installed when our h
 
 Not really happy with the solution, I decided to invest in a rack. My Criteria:
 
-- Short depth, no more than 600mm to fit in the wardrobe where I had run my network cabling.
-- 10-16U - room for everything I have currently plus a UPS and a server or two further down the line.
+- Short depth, no more than 600 mm to fit in the wardrobe where I had run my network cabling.
+- 10-16U – room for everything I have currently plus a UPS and a server or two further down the line.
 - Open frame
 - Cheap
 

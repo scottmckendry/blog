@@ -1,6 +1,9 @@
 $images = Get-ChildItem -Path ".\" -Recurse -Include *.jpg, *.png, *.jpeg
 
 foreach ($image in $images) {
+  if ($image.DirectoryName -match "logo" -or $image.DirectoryName -match "static") {
+    continue
+  }
   # Convert with cwebp
   $output = $image.DirectoryName + "\" + $image.BaseName + ".webp"
   cwebp -q 50 $image.FullName -o $output
@@ -12,6 +15,9 @@ foreach ($image in $images) {
 $files = Get-ChildItem -Path ".\" -Recurse -Include *.md, *.toml
 
 foreach ($file in $files) {
+  if ($file.Name -eq "logo.md") {
+    continue
+  }
   $content = Get-Content $file.FullName
   $content = $content -replace ".jpg", ".webp"
   $content = $content -replace ".png", ".webp"

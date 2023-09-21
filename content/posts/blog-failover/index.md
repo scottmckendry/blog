@@ -90,8 +90,8 @@ flowchart
     A -->|'A' record does not exist| C(In failover state)
     B -->D(Send web request)
     C -->E(Check time since created)
-    D -->|200 - OK| F(Do nothing)
-    D -->|Other response| G(Replcate 'A' with 'CNAME')
+    D -->|200 – OK| F(Do nothing)
+    D -->|Other response| G(Replicate 'A' with 'CNAME')
     E -->|Record age < outage time| H(Do nothing)
     E -->|Record age > outage time| I(Replace 'CNAME' with 'A')
 {{< /mermaid >}}
@@ -202,10 +202,10 @@ This is set up to run every 10 minutes. Azure only lets you run automation actio
 
 Considering this entire solution is effectively free, I'm pretty happy with it. It hasn't been in place long enough to comment on its usefulness yet but it looks promising.
 
-I'm not super happy with the runbook approach. I'd prefer a more responsive failover - 10 minutes is a bit too slow for my taste. The better alternative would be to use [Cloudflare Load Balancing](https://www.cloudflare.com/en-gb/load-balancing/?ref=scottmckendry.tech) (paid service) which allows for instant failover.️
+I'm not super happy with the runbook approach. I'd prefer a more responsive failover – 10 minutes is a bit too slow for my taste. The better alternative would be to use [Cloudflare Load Balancing](https://www.cloudflare.com/en-gb/load-balancing/?ref=scottmckendry.tech) (paid service) which allows for instant failover.️
 
 If I had another server, I could set up replication and have load balancing handled by Traefik on premise. The problem is that two local servers are likely to be affected by the same internet and electrical outages. Redundant compute, power, internet solutions are certainly rabbit holes I will be diving down in the future.
 
-As always, everything is available on my Github:
+As always, everything is available on my GitHub:
 
 {{< github repo="scottmckendry/BlogMaintenancePage" >}}
