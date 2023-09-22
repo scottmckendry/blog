@@ -1,8 +1,8 @@
 <p align="center">
   <a href="https://scottmckendry.tech">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://scottmckendry.tech/img/logo/icon2transparent.webp">
-      <img src="https://scottmckendry.tech/img/logo/icon1transparent.webp" height="100">
+      <source media="(prefers-color-scheme: dark)" srcset="https://scottmckendry.tech/img/logo/icon2transparent.png">
+      <img src="https://scottmckendry.tech/img/logo/icon1transparent.png" height="100">
     </picture>
     <h1 align="center">My Blog</h1>
   </a>

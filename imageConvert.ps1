@@ -15,9 +15,10 @@ foreach ($image in $images) {
 $files = Get-ChildItem -Path ".\" -Recurse -Include *.md, *.toml
 
 foreach ($file in $files) {
-  if ($file.Name -eq "logo.md") {
+  if ($file.Name -eq "logo.md" -or $file.Name -eq "README.md") {
     continue
   }
+  Write-Host "Processing $($file.Name)..."
   $content = Get-Content $file.FullName
   $content = $content -replace ".jpg", ".webp"
   $content = $content -replace ".png", ".webp"
