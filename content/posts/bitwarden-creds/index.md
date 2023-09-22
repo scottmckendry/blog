@@ -1,6 +1,6 @@
 ---
 title: "A Makeshift Bitwarden Credential Sync Solution for Docker"
-date: 2023-02-02T00:00:00-00:00
+date: 2023-02-02
 tags: ["docker", "bitwarden" ]
 summary: "A simple approach for managing docker-compose passwords and keys 🔑"
 url: "/docker-secret-management/"

@@ -1,6 +1,6 @@
 ---
 title: "Building a Better Blog with Ghost"
-date: 2023-01-10T00:00:00-00:00
+date: 2023-01-10
 tags: ["ghost", "traefik", "docker", "blog"]
 summary: "My experience building a minimal, lightweight blog using Ghost 👻"
 url: "/ghost-blog/"
@@ -8,7 +8,7 @@ url: "/ghost-blog/"
 
 I recently decided to have another crack at blogging. Having gone through the pain of setting up a WordPress site in the past and not enjoying the process of writing on the platform at all, ultimately giving up, I knew I had to find an alternative. Enter Ghost.
 
-![img](/img/ghost-blog/ghost-logo.webp)
+![img](/img/ghost-blog/ghost-logo-dark.webp)
 
 Ghost appeared to be the standout candidate. It ticked all the boxes.
 

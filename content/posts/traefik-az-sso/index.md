@@ -1,6 +1,6 @@
 ---
 title: "Traefik - Replacing Basic Authentication with Azure SSO Using ForwardAuth"
-date: 2023-01-29T00:00:00-00:00
+date: 2023-01-29
 tags: ["traefik", "azure", "docker"]
 summary: "Configuring SSO for Traefik using Azure Active Directory 🔓"
 url: "/traefik-replacing-basic-authentication-with-sso/"

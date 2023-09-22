@@ -1,6 +1,6 @@
 ---
 title: "How I Sync My Dotfiles Between Windows and Linux Using GitHub Actions"
-date: 2023-09-14T00:00:00-00:00
+date: 2023-09-14
 tags: ["windows", "linux", "github", "dotfiles"]
 summary: "Dotfile Harmony: GitHub Actions in 'Action' 🚀"
 url: "/how-i-sync-my-dotfiles-between-windows-and-linux-using-github-actions/"

@@ -1,8 +1,8 @@
 <p align="center">
   <a href="https://scottmckendry.tech">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://scottmckendry.tech/img/logo/icon2transparent.png">
-      <img src="https://scottmckendry.tech/img/logo/icon1transparent.png" height="100">
+      <source media="(prefers-color-scheme: dark)" srcset="https://scottmckendry.tech/img/logo/icon2transparent.webp">
+      <img src="https://scottmckendry.tech/img/logo/icon1transparent.webp" height="100">
     </picture>
     <h1 align="center">My Blog</h1>
   </a>
@@ -25,6 +25,9 @@
 
 My personal blog. Built with [Hugo](https://gohugo.io/) and [Blowfish](https://github.com/nunocoracao/blowfish). Hosted on [GitHub Pages](https://pages.github.com/).
 
+## Contributing 🤝
+If you find a typo, inaccuracy or have a suggestion for a post, feel free to open a pull request or an issue.
+I'm more than happy to credit all contributors, big and small.
 
 ## Latest Posts 📬
 <!-- BLOG-POST-LIST:START -->

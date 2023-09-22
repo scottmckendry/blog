@@ -1,6 +1,6 @@
 ---
 title: "Cloud Failover for \"Maintenance\" Using Azure Static Web App & Runbook"
-date: 2023-02-04T00:00:00-00:00
+date: 2023-02-04
 tags: ["azure", "blog"]
 summary: "My friendly status page for inevitable outages 🚧"
 url: "/maintenance-web-app-azure/"

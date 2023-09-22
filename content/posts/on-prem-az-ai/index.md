@@ -1,6 +1,6 @@
 ---
 title: "Monitoring On-Premise Web Applications with Azure App Insights"
-date: 2023-02-05T00:00:00-00:00
+date: 2023-02-05
 tags: ["azure"]
 summary: "Improving upon my web failover solution with the help of App Insights and Availability Monitoring 📊"
 url: "/web-monitoring/"

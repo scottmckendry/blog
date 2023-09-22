@@ -1,6 +1,6 @@
 ---
 title: "The Ultimate PowerShell Profile"
-date: 2023-07-16T00:00:00-00:00
+date: 2023-07-16
 tags: ["powershell", "windows"]
 summary: "Putting the \"Power\" back into PowerShell with custom functions and aliases 💪"
 url: "/the-ultimate-powershell-profile/"
