@@ -44,8 +44,8 @@ Also, having recently picked up Neovim, I found it much easier to write my posts
 ### Performance
 Hosting my blog on GitHub Pages means that I don't have to worry about the performance of my site. GitHub Pages is fast and reliable. Because I was self-hosting Ghost, the performance of my site was entirely dependent on the performance of my server.
 Here's a comparison of the performance of my site before and after the migration:
-![before](/img/hugo-blog/before.png "Before")
-![after](/img/hugo-blog/after.png "After")
+![before](/img/hugo-blog/before.webp "Before")
+![after](/img/hugo-blog/after.webp "After")
 
 ### Maintainability
 There's no doubt that self-hosting ghost is a lot more work. Along with the main Ghost container, I also had to maintain a MySQL database. Because the content was stored directly in the database, I had to take regular backups.
