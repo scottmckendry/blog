@@ -78,8 +78,6 @@ jobs:
           git_server: "github.com"
 ```
 
-Copy
-
 A few points to note about the config:
 
 - The `commit_message` parameter is set to the commit message of the triggering commit, ensuring consistency across both repositories.

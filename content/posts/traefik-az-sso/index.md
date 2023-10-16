@@ -8,7 +8,7 @@ url: "/traefik-replacing-basic-authentication-with-sso/"
 
 Out of the box, Traefik has a simple basic auth middleware that can be used for proxied apps that don't have their own authentication solution.
 
-If you followed my [Traefik configuration guide](https://scottmckendry.tech/traefik-ssl-all-the-things/), you would already be using Traefik's [basic authentication solution](https://doc.traefik.io/traefik/middlewares/http/basicauth/?ref=scottmckendry.tech). In this guide, we'll be replacing this middleware with [FowardAuth](https://doc.traefik.io/traefik/middlewares/http/forwardauth/?ref=scottmckendry.tech).
+If you followed my [Traefik configuration guide](https://scottmckendry.tech/traefik-setup/), you would already be using Traefik's [basic authentication solution](https://doc.traefik.io/traefik/middlewares/http/basicauth/?ref=scottmckendry.tech). In this guide, we'll be replacing this middleware with [FowardAuth](https://doc.traefik.io/traefik/middlewares/http/forwardauth/?ref=scottmckendry.tech).
 
 ### Why not BasicAuth?
 
