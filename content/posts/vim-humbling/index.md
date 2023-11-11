@@ -1,6 +1,6 @@
 ---
 title: "The 5 Stages of Vim: A Humbling Experience"
-date: 2023-11-10
+date: 2023-11-11
 tags: [ "vim" ]
 summary: "My journey with vim and a lesson on why it's good to suck at something 💩"
 ---
