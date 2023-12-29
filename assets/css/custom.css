@@ -1,9 +1,13 @@
 /* Hide header text */
 body > div > div > nav > a.text-gray-500 {
-  display: none;
+    display: none;
 }
 
 img.logo {
-  max-height: 9rem;
-  max-width: 9rem;
+    max-height: 9rem;
+    max-width: 9rem;
+}
+
+.max-w-prose {
+    margin-bottom: 0;
 }
