@@ -5,6 +5,8 @@ tags: [ "vim" ]
 summary: "My journey with vim and a lesson on why it's good to suck at something 💩"
 ---
 
+{{< youtube uYXlgZKdsFM >}}
+
 As I start typing this post in my editor of choice (spoiler alert, it's [neovim](https://github.com/neovim/neovim)), I can't help but think about where I was just a few months ago. Blissfully ignorant and content in what I thought was the only obvious choice, VS Code.
 
 To me, `vim` was something to check carefully for when copy/pasting commands. It had to be delicately replaced with `nano` or risk rebooting the server. I had no idea what it was or why anyone would use it.
