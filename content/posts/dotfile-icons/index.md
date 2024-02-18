@@ -6,21 +6,22 @@ summary: "My attempt at minimal, *cross-platform* status icons for my terminal p
 url: "/dotfile-icons/"
 ---
 
-My dotfiles are a labour of love. With over [200 commits](https://github.com/scottmckendry/windots/commits/main), you could say that I'm a bit obsessed with tweaking and customising things. The closest approximation to my relationship with my setup can be summed up by the following quote:
+My dotfiles are a labour of love. With over [200 commits](https://github.com/scottmckendry/windots/commits/main), you could say that I'm a bit obsessed with tweaking and customising things. The relationship I share with my setup can be summed up in a single quote:
 
 > Just one more thing...<br>
 > — Steve Jobs
 
 The latest "one more thing" I've been working on is a couple of custom status icons for my prompt. Specifically to show two things:
 
-1. Pending Software Updates
-2. Changes to my dotfiles that have not been pulled to my local machine
+1. **Pending Software Updates:** Check for any pending updates to software installed on my system either through `apt`, `choco` or `winget`. I want to see at a glance if there are any updates available.
+2. **Dotfile Changes:** Check for any upstream changes to my dotfiles (particularly any that have been [synced between repos](/how-i-sync-my-dotfiles-between-windows-and-linux-using-github-actions/)) that have not been pulled down to my local machine.
 
-I use [Starship](https://starship.rs/) as my prompt, so I'll be showing you how to set up custom status icons using it. If you use a different prompt, you can still follow along and adapt the steps to your specific use case.
+I use [Starship](https://starship.rs/) as my prompt, so the config details in this post will be specific to that. However, the concepts should be applicable to any prompt customisation tool like [Oh My Posh](https://ohmyposh.dev/), [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
+or [Spaceship](https://spaceship-prompt.sh/).
 
 ## Requirements
 
-Now I'm fairly certain this is a *"solved"* problem. There are probably a bunch of tools and scripts that can do this for me. But sometimes reinventing the wheel is more fun.
+Now I'm fairly certain this is a *"solved"* problem. There are probably a bunch of tools and scripts that can do this for me. But sometimes *[reinventing the wheel](https://xkcd.com/1673/)* is more fun.
 
 I had two main requirements for this project:
 
@@ -31,7 +32,7 @@ Sounds simple enough, right? (foreshadowing 😈)<br>Let's get started.
 
 ## Starship Environment Variables
 
-Starship allows you to display the value of environment variables in your prompt. This is perfect for our use case, as we can set environment variables to the status of our pending updates and dotfile changes.
+Starship allows you to display the value of environment variables in your prompt. This is perfect for our use case, as we can set the value of these variables in our shell profiles and have them displayed in our prompt.
 
 We can configure Starship to display the value of an environment variable by adding a new section to our `starship.toml` file. Here's an example of how to display the value of the `SOFTWARE_UPDATE_AVAILABLE` & `DOTFILES_UPDATE_AVAILABLE` environment variables:
 
@@ -74,7 +75,7 @@ The nerd font icons I am using can be found [here](https://www.nerdfonts.com/che
 
 Great! We've got the environment variables displaying in our prompt. But in its current state, the value of these variables will never change.
 
-We want these to display dynamically based on the actual status of our system. **This is where the fun begins.**
+We want these to display dynamically based on the actual status of our system.
 
 ## Dotfile Changes (Bash)
 
@@ -122,7 +123,9 @@ Great! Much faster. But where's our icon gone? It turns out running a function i
 
 I tried a few approaches, but ultimately I could not find any suitable solution for achieving this in Bash.
 
-However, the child process *could* modify a local file, which the parent process could then read. So instead of setting the environment variable directly, we can write code to export the variable to `.bash_profile`. I can then source this file as part of the prompt command. This is a bit of a hack, but it works.
+However, the child process *could* modify a local file, which the parent process could then read. So instead of setting the environment variable directly, we can write code to export the variable to `.bash_profile`. I can then source this file as part of the prompt command.
+
+Here's the full implementation:
 
 ```bash
 # ~/.bashrc
@@ -150,7 +153,6 @@ This updates any environment variables declared in `.bash_profile` before the pr
 ## Pending Software Updates (Bash)
 
 We can take our learnings from the dotfile changes and apply them to the pending software updates. Here's the basic logic we want to implement:
-icons
 
 1. Update our package repositories to get the latest package information.
 2. Check for any pending updates.
@@ -176,7 +178,7 @@ checkSoftwareUpdates &
 PROMPT_COMMAND='. ~/.bash_profile;'$PROMPT_COMMAND
 ```
 
-Opening a new terminal, there's an immediate issue. The `sudo` command requires a password, which will cause the prompt to hang until the command is completed.
+Opening a new terminal, there's an immediate issue. The `sudo` command requires a password, which outright breaks our prompt. 💩
 
 We can fix this by adding `sudo` to the `NOPASSWD` list in the `/etc/sudoers` file. This will allow the `apt` command to run without a password prompt.
 
@@ -186,7 +188,9 @@ We can fix this by adding `sudo` to the `NOPASSWD` list in the `/etc/sudoers` fi
 username ALL=(ALL) NOPASSWD: /usr/bin/apt
 ```
 
-Cool, first problem solved. But now we have a new problem. For some reason, the `apt` command exhibits strange behaviour when run in the background. To the point where the terminal would become ***unusable***. Redirecting output to `/dev/null` didn't help.
+Cool, first problem solved.
+
+But now we have a new problem. For some reason, the `apt` command exhibits strange behaviour when run in the background. To the point where the terminal would become ***unusable***. Redirecting output to `/dev/null` didn't help.
 
 ![img](https://c.tenor.com/L66gfL1eMUsAAAAC/tenor.gif)
 
@@ -214,7 +218,7 @@ function checkUpdates() {
 ...
 ```
 
-Et voila! We have a working solution for both dotfile changes and pending software updates in Bash.
+*Et voila!* We have a working solution for both dotfile changes and pending software updates in Bash.
 
 ## PowerShell
 
@@ -226,7 +230,7 @@ In PowerShell, the equivalent of the `&` operator is `Start-Job`. This allows us
 
 That's where PowerShell's *secret weapon* comes in: `Start-ThreadJob`. It creates background jobs similar to `Start-Job`, but with one key difference: the jobs created run in separate threads within the local process.
 
-Because of this, the job is able to share the same memory space as the parent process, allowing it to modify environment variables in the parent process. This is exactly what we need.
+Because of this, the job is able to share the same memory space as the parent process, allowing it to modify its ancestor's environment variables. This is exactly what we need!
 
 ```powershell
 # $PROFILE.CurrentUserAllHosts
@@ -245,7 +249,7 @@ Start-ThreadJob -ScriptBlock {
 
 The `Start-ThreadJob` command runs the `ScriptBlock` in the background, allowing the prompt to display immediately. I'm using `Out-Null` to suppress the output of `Start-ThreadJob`, which stops the prompt from displaying the created job information.
 
-For the pending software updates, I wanted to be a bit more creative. I use both `winget` and `choco` to manage my software on Windows, so the solution needed to check both package managers. So I came up with something like this:
+For the pending software updates, I needed to be a bit more creative. I use both `winget` and `choco` to manage my software on Windows, so the solution needed to check both package managers. My first pass looked something like this:
 
 ```powershell
 # $PROFILE.CurrentUserAllHosts
@@ -264,7 +268,7 @@ Start-ThreadJob -ScriptBlock {
 
 This had the functionality I wanted, but similar to the Bash implementation, it had a noticeable effect on the usability of the terminal while the job was running.
 
-*What is it with package managers and being obnoxious in the background?*
+*What is it with package managers and being obnoxious?* 🙃
 
 ![img](https://c.tenor.com/2VdKxnQxcFcAAAAC/tenor.gif)
 
