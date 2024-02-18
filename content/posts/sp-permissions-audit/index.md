@@ -2,7 +2,7 @@
 title: 'How to "Actually" Audit SharePoint Permissions'
 date: 2023-12-29
 tags: ["powershell", "sharepoint"]
-summary: "A PowerShell script to audit SharePoint permissions and export the results to a CSV file."
+summary: "A PowerShell script to audit SharePoint permissions and export the results to a CSV file 🔍"
 url: "/sp-permissions-audit/"
 ---
 
@@ -16,9 +16,9 @@ It's a bit of a mess.
 
 ## Common Pitfalls when Auditing SharePoint Permissions
 
--   A user context is used to check permissions. This requires the user to have access to the site in order to check the permissions. This is not ideal if you're trying to audit permissions for a user who has left the company.
--   Only top-level groups are checked. SharePoint's permissions are hierarchical, so you need to check the permissions on the site, and then recursively check the permissions on all lists, libraries and items.
--   Sharing Links are ignored. The 'Share' button in SPO is incredibly enticing for the unassuming user. It's easy to share a document with a user or group without realising the implications. These links are not visible in the UI, so they are often overlooked when auditing permissions.
+- A user context is used to check permissions. This requires the user to have access to the site in order to check the permissions. This is not ideal if you're trying to audit permissions for a user who has left the company.
+- Only top-level groups are checked. SharePoint's permissions are hierarchical, so you need to check the permissions on the site, and then recursively check the permissions on all lists, libraries and items.
+- Sharing Links are ignored. The 'Share' button in SPO is incredibly enticing for the unassuming user. It's easy to share a document with a user or group without realising the implications. These links are not visible in the UI, so they are often overlooked when auditing permissions.
 
 ## The Solution
 
