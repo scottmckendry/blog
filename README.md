@@ -31,10 +31,10 @@ I'm more than happy to credit all contributors, big and small.
 
 ## Latest Posts 📬
 <!-- BLOG-POST-LIST:START -->
+- [Custom Prompt Status Icons Using Starship](https://scottmckendry.tech/dotfile-icons/)
 - [How to &quot;Actually&quot; Audit SharePoint Permissions](https://scottmckendry.tech/sp-permissions-audit/)
 - [The 5 Stages of Vim: A Humbling Experience](https://scottmckendry.tech/posts/vim-humbling/)
 - [Moving My Blog From Ghost to Hugo](https://scottmckendry.tech/posts/hugo-blog/)
 - [How I Sync My Dotfiles Between Windows and Linux Using GitHub Actions](https://scottmckendry.tech/how-i-sync-my-dotfiles-between-windows-and-linux-using-github-actions/)
 - [The Ultimate PowerShell Profile](https://scottmckendry.tech/the-ultimate-powershell-profile/)
-- [DIY Network/Server Rack](https://scottmckendry.tech/diy-network-rack/)
 <!-- BLOG-POST-LIST:END -->
