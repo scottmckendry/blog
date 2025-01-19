@@ -14,7 +14,7 @@ I've never had any issues with the release process for these projects. Generally
 
 However, I was recently thinking about releases for closed-source products, aimed at less technical audiences. In these situations, the terse [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) style bulleted notes don't translate as well.
 
-![funny_words](/img/releases-for-normal-people/funny_words.jpg)
+![funny_words](/img/releases-for-normal-people/funny_words.webp)
 
 ## Why bother?
 
@@ -28,7 +28,7 @@ The problem with release notes is that they are often written by developers, for
 
 A changelog is a technical document that lists changes between versions. It is often used to communicate changes to developers, and is not intended for end-users. An end user doesn't care about the technical details of a release. They care about how it affects them, and how it makes their life easier.
 
-![worthless](/img/releases-for-normal-people/worthless.png)
+![worthless](/img/releases-for-normal-people/worthless.webp)
 
 ## I'll write it myself
 
@@ -75,7 +75,7 @@ No need to reinvent the wheel here. There are plenty of tools that can generate 
 We now have a changelog that represents our current release, but we've lost some important context along the way.
 
 - **Commit bodies** - These are stripped out by most changelog generators, but can provide important context for a change.
-- **Linked issues** - The numbers are included but the content of the issue is not. Issues can provide important information about the feature or bug fix, often from a non-technical perspective.
+- **Linked issues** - Issue/workitem IDs are often included, but the content of the issue is not. Issues can provide important information about the feature or bug fix, often from a non-technical perspective.
 
 Introducing another tool:
 
