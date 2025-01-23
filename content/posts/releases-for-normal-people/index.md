@@ -1,6 +1,6 @@
 ---
 title: "Releases for Normal People"
-date: 2025-01-18
+date: 2025-01-23
 tags: ["DevOps", "AI"]
 summary: "A technical approach to non-technical release notes"
 url: "/releases-for-normal-people/"
