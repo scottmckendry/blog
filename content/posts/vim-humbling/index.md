@@ -53,3 +53,15 @@ I wrote my own [configuration from scratch](https://github.com/scottmckendry/win
 I have a greater appreciation for open source, and all the hard work that goes into maintaining the software that powers the world. Most importantly, I'm thankful to myself for sucking at something long enough to see the results.
 
 I'm happy, I'm productive, <b>I'm grateful</b>.
+
+## Bonus Stage: Evangelism
+
+It's now 2025. I've now been *"Vimming"* for almost 2 years and it seems that this article has reached much farther than I ever thought it would.
+
+Dr. Mark Ebbert, of the Sanders-Brown Center on Aging (University of Kentucky), recently [reached out to me](https://github.com/scottmckendry/blog/issues/4) stating that he thoroughly enjoyed this post and has shared in with his lab. As per his recommendation, I've added a bonus stage to the 5 stages of Vim; **Evangelism**:
+
+> "I am the evangelist and my trainees have to listen to my sermons on how Vim will save them from mouse and arrow-key purgatory. <br>I have even been teaching a full lecture on Vim to undergraduate and graduate students for years."
+>
+> <cite> - Dr. Mark Ebbert</cite>
+
+Here's to many more converts, Mark! 🍻
