@@ -72,6 +72,7 @@ defaultFeaturedImage = "img/default.webp" # used as default for featured images 
   showAuthorsBadges = false
   showWordCount = false
   # sharingLinks = [ "linkedin", "twitter", "reddit", "pinterest", "facebook", "email", "whatsapp", "telegram"]
+  showComments = true
 
 [list]
   showHero = true
