@@ -7,6 +7,7 @@ import remarkGfm from "remark-gfm";
 import remarkRehype from "remark-rehype";
 import rehypeStringify from "rehype-stringify";
 import { codeToHtml } from "shiki";
+import { remarkAlert } from "remark-github-blockquote-alert";
 
 const postsDirectory = path.join(process.cwd(), "content/posts");
 
@@ -190,98 +191,32 @@ async function processMarkdown(content: string): Promise<string> {
     },
   );
 
-  // Process custom shortcodes
-  let processedContent = contentWithPlaceholders;
-
-  // Process alerts: {{< alert icon=lightbulb >}}...{{</ alert >}} or {{< alert >}}...{{</ alert >}}
-  processedContent = processedContent.replace(
-    /\{\{<\s*alert(?:\s+icon=(\w+))?\s*>\}\}([\s\S]*?)\{\{<\s*\/alert\s*>\}\}/g,
-    (_, icon, alertContent) => {
-      const iconType = icon || "info";
-      const alertType =
-        iconType === "lightbulb"
-          ? "tip"
-          : iconType === "warning"
-            ? "warning"
-            : "info";
-      const label =
-        iconType === "lightbulb"
-          ? "TIP"
-          : iconType === "warning"
-            ? "WARNING"
-            : "NOTE";
-      return `<div class="alert alert-${alertType}"><span class="alert-label">${label}</span><div>${alertContent.trim()}</div></div>`;
-    },
-  );
-
-  // Process GitHub repos: {{< github repo="user/repo" >}}
-  processedContent = processedContent.replace(
-    /\{\{<\s*github\s+repo="([^"]+)"\s*>\}\}/g,
-    (_, repo) => {
-      return `<a href="https://github.com/${repo}" target="_blank" rel="noopener noreferrer" class="github-card">github.com/${repo}</a>`;
-    },
-  );
-
-  // Process YouTube embeds: {{< youtube id >}}
-  processedContent = processedContent.replace(
-    /\{\{<\s*youtube\s+([a-zA-Z0-9_-]+)\s*>\}\}/g,
-    (_, id) => {
-      return `<div class="my-6 aspect-video"><iframe src="https://www.youtube.com/embed/${id}" title="YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-full"></iframe></div>`;
-    },
-  );
-
-  // Process lead shortcode: {{< lead >}}...{{< /lead >}}
-  processedContent = processedContent.replace(
-    /\{\{<\s*lead\s*>\}\}([\s\S]*?)\{\{<\s*\/lead\s*>\}\}/g,
-    (_, content) => {
-      return `<p class="text-lg text-cyan leading-relaxed mb-6">${content.trim()}</p>`;
-    },
-  );
-
-  // Process button shortcode: {{< button href="url" >}}...{{< /button >}}
-  processedContent = processedContent.replace(
-    /\{\{<\s*button\s+href="([^"]+)"\s*>\}\}([\s\S]*?)\{\{<\s*\/button\s*>\}\}/g,
-    (_, href, content) => {
-      return `<a href="${href}" target="_blank" rel="noopener noreferrer" class="inline-block border border-border bg-background-alt text-cyan px-4 py-2 hover:border-cyan transition-colors my-4">${content.trim()}</a>`;
-    },
-  );
-
-  // Process article shortcode: {{< article link="/slug/" >}}
-  processedContent = processedContent.replace(
-    /\{\{<\s*article\s+link="([^"]+)"\s*>\}\}/g,
-    (_, link) => {
-      return `<blockquote class="border-l-4 border-cyan pl-4 my-4"><p class="text-grey">Related article: <a href="${link}" class="text-blue hover:text-cyan underline underline-offset-2">${link}</a></p></blockquote>`;
-    },
-  );
-
-  // Process mermaid shortcode: {{< mermaid >}}...{{< /mermaid >}}
-  processedContent = processedContent.replace(
-    /\{\{<\s*mermaid\s*>\}\}([\s\S]*?)\{\{<\s*\/mermaid\s*>\}\}/g,
-    (_, diagram) => {
-      return `<pre class="mermaid bg-background-alt border border-border p-4 my-4 overflow-x-auto">${diagram.trim()}</pre>`;
-    },
-  );
-
   // Convert markdown to HTML using remark
   const result = await unified()
     .use(remarkParse)
     .use(remarkGfm)
+    .use(remarkAlert)
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeStringify, { allowDangerousHtml: true })
-    .process(processedContent);
+    .process(contentWithPlaceholders);
 
   let html = String(result);
 
-  // Replace code block placeholders with highlighted code
+  // Replace code block placeholders with rendered content
   // The placeholder may be wrapped in <p> tags by remark, so we need to handle that
   for (const block of codeBlocks) {
-    const highlighted = await highlightCode(block.code, block.lang);
+    let rendered: string;
+    if (block.lang === "mermaid") {
+      rendered = `<pre class="mermaid bg-background-alt border border-border p-4 my-4 overflow-x-auto">${escapeHtml(block.code)}</pre>`;
+    } else {
+      rendered = await highlightCode(block.code, block.lang);
+    }
     // Remove any <p> wrapper around the placeholder
     html = html.replace(
       new RegExp(`<p>${block.placeholder}</p>`, "g"),
-      highlighted,
+      rendered,
     );
-    html = html.replace(block.placeholder, highlighted);
+    html = html.replace(block.placeholder, rendered);
   }
 
   return html;

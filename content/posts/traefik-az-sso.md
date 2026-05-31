@@ -38,11 +38,10 @@ From the Azure Portal, navigate to the [App Registrations blade](https://portal
 
 Give it a relevant name and add a web redirect URI with your newly created subdomain E.g `https://[serviceUrl]/_oauth`. Click Register.
 
-{{< alert icon=lightbulb >}}
-The Azure interface only lets you add one redirect when creating a new registration. Additional URIs can be added from the Authentication tab after creation.
-
-It's important to add the URL for each of the services you want to protect with SSO.
-{{</ alert >}}
+> [!TIP]
+> The Azure interface only lets you add one redirect when creating a new registration. Additional URIs can be added from the Authentication tab after creation.
+>
+> It's important to add the URL for each of the services you want to protect with SSO.
 
 Under **Certificates & Secrets**, generate a new secret for the application. Make sure to copy it and keep it somewhere safe. Secrets will only appear once.
 
@@ -108,9 +107,8 @@ To require AAD authentication on a container or service, just update your middle
 - "traefik.http.routers.traefik-secure.middlewares=ipWhiteList@file, auth@file"
 ```
 
-{{< alert >}}
-**IMPORTANT:** Make sure you include each service in your App Registrations Redirect URI list. The list should include all hosts you intend to authenticate from.
-{{</ alert >}}
+> [!NOTE]
+> **IMPORTANT:** Make sure you include each service in your App Registrations Redirect URI list. The list should include all hosts you intend to authenticate from.
 
 If you see the message below, the URL you're trying to access is not in the App Registrations URIs:
 
@@ -144,4 +142,4 @@ docker logs traefik
 
 with 'auth' and 'traefik' being the names of the respective containers. There is also plenty of helpful documentation on the GitHub repo:
 
-{{< github repo="thomseddon/traefik-forward-auth" >}}
+https://github.com/thomseddon/traefik-forward-auth

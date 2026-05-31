@@ -9,7 +9,7 @@ If you've visited before, you may have noticed that my blog looks a little diffe
 
 I've been using Ghost since the start of this year. In fact, my very first post was about my experience setting up Ghost.
 
-{{< article link="/ghost-blog/" >}}
+Related: [my previous post on setting up Ghost](/ghost-blog/)
 
 Since then, I've written several posts and enjoyed the experience. But it was time for a change. Having recently picked up Go, I decided to give Hugo a try.
 
@@ -31,9 +31,7 @@ Anytime I push a commit to the `main` branch, GitHub Actions will build my site 
 
 For more details, check out this guide from Hugo's documentation:
 
-{{< button href="https://gohugo.io/hosting-and-deployment/hosting-on-github/" >}}
-Hugo: Host on GitHub Pages
-{{< /button >}}
+[Hugo: Host on GitHub Pages](https://gohugo.io/hosting-and-deployment/hosting-on-github/)
 
 ### Editing Experience
 
@@ -41,7 +39,7 @@ At first, I was a big fan of Ghost's editor. It's a simple, clean, and distracti
 
 There was also no native support for GitHub repository links. I had to use custom HTML to embed a GitHub repository in a post. With the theme I'm using now, I can simply use a shortcode to embed a GitHub repository. Like the one below:
 
-{{< github repo="scottmckendry/windots" >}}
+https://github.com/scottmckendry/windots
 
 Also, having recently picked up Neovim, I found it much easier to write my posts in Markdown using Vim motions. I can use my favourite plugins and key bindings to write my posts. I had a system, in place for this with Ghost, but it required a significant amount of double-handling to move my Markdown draft into the Ghost Editor for publishing.
 
@@ -74,8 +72,8 @@ Thank you to [Nuno Coração](https://nunocoracao.com/) for his work on the fata
 
 I'm really happy with the move to Hugo. I'm looking forward to writing more posts and continuing to customize my blog. If you're interested in the theme I'm using, you can find it on GitHub:
 
-{{< github repo="nunocoracao/blowfish" >}}
+https://github.com/nunocoracao/blowfish
 
 You can also find the source code for my blog here:
 
-{{< github repo="scottmckendry/blog" >}}
+https://github.com/scottmckendry/blog

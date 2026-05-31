@@ -12,7 +12,7 @@ I like to tinker, so this happens quite a bit.
 
 When this happens, anyone visiting will get something like this:
 
-![img](img/blog-failover/outage.webp)
+![img](/img/blog-failover/outage.webp)
 
 Which is fine. The website is not critical, nor is anything else running on the server and Cloudflare's 5XX error pages are always more user-friendly than nothing.
 
@@ -22,11 +22,11 @@ But what If I want to assure visitors that, given enough time, I'll get the site
 
 I decided to base my maintenance page on the default Ghost Blog error page. I often see this when restarting the container:
 
-![img](img/blog-failover/ghost-error.webp)
+![img](/img/blog-failover/ghost-error.webp)
 
 So I sat down and wrote out some HTML and CSS to get this:
 
-![img](img/blog-failover/maintenance.webp)
+![img](/img/blog-failover/maintenance.webp)
 
 I then published the assets to a [GitHub repository](https://github.com/scottmckendry/BlogMaintenancePage?ref=scottmckendry.tech), ready to be scooped up by Azure.
 
@@ -36,11 +36,11 @@ I then published the assets to a [GitHub repository](https://github.com/scottmck
 
 From the [Static Web Apps Blade](https://portal.azure.com/?quickstart=True&ref=scottmckendry.tech#view/HubsExtension/BrowseResource/resourceType/Microsoft.Web%2FStaticSites), I created a new web app and signed in using my GitHub account.
 
-![img](img/blog-failover/create-web-app.webp)
+![img](/img/blog-failover/create-web-app.webp)
 
 I could then select the repository I created earlier and fill in any settings specific to my project:
 
-![img](img/blog-failover/create-web-app-2.webp)
+![img](/img/blog-failover/create-web-app-2.webp)
 
 All that was left to do was click Review + Create. After a few seconds, the deployment was completed and my web app was live. A few more seconds later and the repo was published.
 
@@ -50,17 +50,16 @@ Azure will automatically assign a URL to the web app. Mine was given [https://ha
 
 Under custom domains, I added a blog domain, generated a 'txt' record and entered it into Cloudflare DNS. After a few minutes, my domain was validated.
 
-![img](img/blog-failover/custom-domain.webp)
+![img](/img/blog-failover/custom-domain.webp)
 
-{{< alert icon=lightbulb >}}
-There's no need to fuss around with SSL certificates for Static Web Apps, this is provided by Azure automatically. 
-{{< /alert >}}
+> [!TIP]
+> There's no need to fuss around with SSL certificates for Static Web Apps, this is provided by Azure automatically.
 
 ### Configuring Redirects
 
 One problem I noticed when testing failover was if I was viewing a page on my site beforehand, It would give me a 404 error if I tried to access the page again.
 
-![img](img/blog-failover/404.webp)
+![img](/img/blog-failover/404.webp)
 
 In order to fix this, I added a file named `staticwebapp.config.json` to my repository with the following content:
 
@@ -83,7 +82,7 @@ For planned maintenance, I can simply go to the Cloudflare dashboard and update 
 
 Here a logic tree to show how the automation works:
 
-{{< mermaid >}}
+```mermaid
 %%{init: {'theme':'dark'}}%%
 flowchart
 A[Check Cloudflare for 'A' record] -->|'A' record exists| B(Not in failover state)
@@ -94,7 +93,7 @@ D -->|200 – OK| F(Do nothing)
 D -->|Other response| G(Replicate 'A' with 'CNAME')
 E -->|Record age < outage time| H(Do nothing)
 E -->|Record age > outage time| I(Replace 'CNAME' with 'A')
-{{< /mermaid >}}
+```
 
 I opted to automate failover using an [Azure Runbook](https://learn.microsoft.com/en-us/azure/automation/overview?ref=scottmckendry.tech). I chose to write the script in PowerShell 7 since it's what I'm most comfortable with. Here's the full script:
 
@@ -196,7 +195,7 @@ else {
 
 This is set up to run every 10 minutes. Azure only lets you run automation actions once every hour. But we can work around this by adding more schedules:
 
-![img](img/blog-failover/schedules.webp)
+![img](/img/blog-failover/schedules.webp)
 
 ### Better Alternatives
 
@@ -208,4 +207,4 @@ If I had another server, I could set up replication and have load balancing hand
 
 As always, everything is available on my GitHub:
 
-{{< github repo="scottmckendry/BlogMaintenancePage" >}}
+https://github.com/scottmckendry/BlogMaintenancePage

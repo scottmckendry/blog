@@ -56,8 +56,7 @@ I added another Action group to this alert for my runbook. Azure has a built-in 
 
 ![img](/img/on-prem-az-ai/runbook-action.webp)
 
-{{< alert icon=lightbulb >}}
-Action Groups are designed to be reused. Try not to put too many Notifications or Actions in one Group. This is why I've created separate Action Groups for Push Notifications and the Runbook.
-{{< /alert >}}
+> [!TIP]
+> Action Groups are designed to be reused. Try not to put too many Notifications or Actions in one Group. This is why I've created separate Action Groups for Push Notifications and the Runbook.
 
 With this action in place, I've effectively halved my response time for failover. Nice!

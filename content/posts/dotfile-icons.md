@@ -67,11 +67,10 @@ This results in the following prompt:
 
 ![img](/img/dotfile-icons/prompt-example.webp)
 
-{{< alert icon=lightbulb >}}
-I've used the 📦 emoji to represent pending software updates since nerd font icons don't render on the web. You can use any emoji or text that you like.
-
-The nerd font icons I am using can be found [here](https://www.nerdfonts.com/cheat-sheet). Specifically, `nf-cod-package` and `nf-md-account_sync_outline`
-{{</ alert >}}
+> [!TIP]
+> I've used the 📦 emoji to represent pending software updates since nerd font icons don't render on the web. You can use any emoji or text that you like.
+>
+> The nerd font icons I am using can be found [here](https://www.nerdfonts.com/cheat-sheet). Specifically, `nf-cod-package` and `nf-md-account_sync_outline`
 
 Great! We've got the environment variables displaying in our prompt. But in its current state, the value of these variables will never change.
 
@@ -366,8 +365,8 @@ I use `wezterm` as my chosen emulator on Windows, but this can be replaced with 
 
 As always, the full source code can be found on my GitHub:
 
-{{< github repo="scottmckendry/windots" >}}
+https://github.com/scottmckendry/windots
 
 <br>
 
-{{< github repo="scottmckendry/dots" >}}
+https://github.com/scottmckendry/dots

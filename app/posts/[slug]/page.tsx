@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
 import type { Metadata } from "next";
+import MermaidRenderer from "@/app/components/MermaidRenderer";
 
 interface PostPageProps {
   params: Promise<{ slug: string }>;
@@ -89,6 +90,7 @@ export default async function PostPage({ params }: PostPageProps) {
           className="prose max-w-none"
           dangerouslySetInnerHTML={{ __html: post.htmlContent }}
         />
+        <MermaidRenderer />
 
         <nav className="mt-6 pt-4 flex items-center justify-between">
           <Link

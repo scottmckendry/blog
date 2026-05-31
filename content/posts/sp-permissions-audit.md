@@ -28,7 +28,7 @@ I decided to write my own solution using modern certificate-based authentication
 
 You can find the script on my GitHub:
 
-{{< github repo="scottmckendry/sp-permissions-audit" >}}
+https://github.com/scottmckendry/sp-permissions-audit
 
 Hopefully this helps someone else out there who is trying to solve the same problem!
 

@@ -155,9 +155,8 @@ find $dockerDirectory -maxdepth 1 -type d -exec cp .env {} \;
 bw logout
 ```
 
-{{< alert icon=lightbulb >}}
-The script depends on the Bitwarden-CLI & JQ packages. You'll need to install both before running. You'll also want to fill in the variables near the top of the script.
-{{< /alert >}}
+> [!TIP]
+> The script depends on the Bitwarden-CLI & JQ packages. You'll need to install both before running. You'll also want to fill in the variables near the top of the script.
 
 Now whenever I need to add a new credential for one of my containers, All I need to do is add it to my Bitwarden Docker folder and re-run the script. Once complete, the credential is available to all of my containers!
 

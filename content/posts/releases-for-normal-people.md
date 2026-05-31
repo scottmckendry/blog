@@ -44,7 +44,7 @@ However, working with a team of developers, it can sometimes be difficult to ach
 
 To combat this, I've been working on an extension:
 
-{{< github repo="scottmckendry/commitscribe">}}
+https://github.com/scottmckendry/commitscribe
 
 It's designed to run on every commit in your default branch, and re-write the commit message in the conventional commit style. It analyses the diff as well as the original commit message to provide a descriptive (and context-aware) commit message.
 
@@ -68,7 +68,7 @@ Now that we have a consistent commit message style, we can start to generate rel
 
 No need to reinvent the wheel here. There are plenty of tools that can generate a changelog from your commit history. For GitHub projects, I wholeheartedly recommend [release-please](https://github.com/googleapis/release-please). For Azure DevOps, I selected semantic-release:
 
-{{< github repo="semantic-release/semantic-release">}}
+https://github.com/semantic-release/semantic-release
 
 ## Providing context
 
@@ -79,7 +79,7 @@ We now have a changelog that represents our current release, but we've lost some
 
 Introducing another tool:
 
-{{< github repo="scottmckendry/cl-parse">}}
+https://github.com/scottmckendry/cl-parse
 
 Cl-parse accepts a changelog as an input, and outputs structured data containing the extra information we need.
 

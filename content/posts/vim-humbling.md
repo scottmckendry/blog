@@ -5,7 +5,7 @@ tags: ["vim"]
 summary: "My journey with vim and a lesson on why it's good to suck at something 💩"
 ---
 
-{{< youtube uYXlgZKdsFM >}}
+<iframe class="my-6 aspect-video w-full h-full" src="https://www.youtube.com/embed/uYXlgZKdsFM" allowfullscreen></iframe>
 
 As I start typing this post in my editor of choice (spoiler alert, it's [neovim](https://github.com/neovim/neovim)), I can't help but think about where I was just a few months ago. Blissfully ignorant and content in what I thought was the only obvious choice, VS Code.
 

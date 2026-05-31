@@ -93,4 +93,4 @@ More and more of my config is becoming platform-agnostic. To add another file or
 
 You can see the action "_in action_" below. Let me know what you think!
 
-{{< github repo="scottmckendry/Windots">}}
+https://github.com/scottmckendry/Windots

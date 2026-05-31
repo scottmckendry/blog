@@ -6,9 +6,7 @@ summary: "Put SSL/HTTPS on all of your Web Services with Traefik Reverse Proxy �
 url: "/traefik-setup/"
 ---
 
-{{< lead >}}
-Put SSL/HTTPS on all of your Web Services with Traefik Reverse Proxy 🚦
-{{< /lead >}}
+> Put SSL/HTTPS on all of your Web Services with Traefik Reverse Proxy 🚦
 
 If you're like me and run multiple services through Docker containers on your home lab server, you've likely found yourself struggling to remember the port numbers you assigned to a given service.
 
@@ -130,14 +128,13 @@ networks:
     external: true
 ```
 
-{{< alert icon=lightbulb >}}
-**IMPORTANT:** Make sure you add a DNS entry for your Traefik container and point it to your public IP address. You'll also need to configure port forwarding rules for ports 80 and 443 on your router to your server.
-
-**Help:**
-
-- [How Do I Create Sub-Sub-Domain on Cloudflare DNS?](https://stackoverflow.com/questions/30802595/how-do-i-create-sub-sub-domain-on-cloudflare-dns?ref=scottmckendry.tech)
-- [How to Forward Ports on Your Router](https://www.howtogeek.com/66214/how-to-forward-ports-on-your-router/?ref=scottmckendry.tech)
-  {{< /alert >}}
+> [!TIP]
+> **IMPORTANT:** Make sure you add a DNS entry for your Traefik container and point it to your public IP address. You'll also need to configure port forwarding rules for ports 80 and 443 on your router to your server.
+>
+> **Help:**
+>
+> - [How Do I Create Sub-Sub-Domain on Cloudflare DNS?](https://stackoverflow.com/questions/30802595/how-do-i-create-sub-sub-domain-on-cloudflare-dns?ref=scottmckendry.tech)
+> - [How to Forward Ports on Your Router](https://www.howtogeek.com/66214/how-to-forward-ports-on-your-router/?ref=scottmckendry.tech)
 
 Check your file carefully and make sure to replace any dummy variables, paths and domains!
 
@@ -157,13 +154,12 @@ docker network create traefik
 
 Now we can start our Traefik container.
 
-{{< alert icon=lightbulb >}}
-To start and restart containers, run the following from the directory containing your docker-compose.yaml file.
-
-`docker-compose up -d --force-recreate`
-
-The `--force-recreate` flag restarts the container regardless of any changes to the compose file.
-{{< /alert >}}
+> [!TIP]
+> To start and restart containers, run the following from the directory containing your docker-compose.yaml file.
+>
+> `docker-compose up -d --force-recreate`
+>
+> The `--force-recreate` flag restarts the container regardless of any changes to the compose file.
 
 Now that we've started the container we should be able to access the Traefik dashboard by going to "traefik.subdomain.example.com". If everything is configured correctly, you should see the dashboard below:
 
@@ -276,9 +272,8 @@ http:
           - "172.16.1.0/24" #and other containers on the same network e.g. the "traefik" network we created earlier.
 ```
 
-{{< alert icon=lightbulb >}}
-You can create your own password hash using `htpasswd` in a bash shell.
-{{< /alert >}}
+> [!TIP]
+> You can create your own password hash using `htpasswd` in a bash shell.
 
 To add our newly created middleware to our container, we add the following label:
 
@@ -398,4 +393,4 @@ We've now successfully configured Traefik, a container and an external service a
 
 My full config is available on my GitHub:
 
-{{< github repo="scottmckendry/traefik" >}}
+https://github.com/scottmckendry/traefik

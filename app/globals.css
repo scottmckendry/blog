@@ -130,11 +130,23 @@
   @apply text-foreground leading-relaxed;
 }
 
-.prose h1,
-.prose h2,
-.prose h3,
-.prose h4 {
+.prose h1 {
+  @apply text-orange font-bold mt-8 mb-4;
+}
+.prose h2 {
   @apply text-cyan font-bold mt-8 mb-4;
+}
+.prose h3 {
+  @apply text-blue font-bold mt-8 mb-4;
+}
+.prose h4 {
+  @apply text-purple font-bold mt-8 mb-4;
+}
+.prose h5 {
+  @apply text-magenta font-bold mt-8 mb-4;
+}
+.prose h6 {
+  @apply text-green font-bold mt-8 mb-4;
 }
 
 .prose h1::before {
@@ -149,21 +161,33 @@
   content: "### ";
   @apply text-grey;
 }
+.prose h4::before {
+  content: "#### ";
+  @apply text-grey;
+}
+.prose h5::before {
+  content: "##### ";
+  @apply text-grey;
+}
+.prose h6::before {
+  content: "###### ";
+  @apply text-grey;
+}
 
 .prose p {
   @apply mb-4;
 }
 
 .prose a {
-  @apply text-blue underline underline-offset-2 hover:text-cyan transition-colors;
+  @apply text-cyan underline underline-offset-2 hover:text-blue transition-colors;
 }
 
 .prose strong {
-  @apply text-yellow font-bold;
+  @apply text-pink font-bold;
 }
 
 .prose em {
-  @apply text-magenta italic;
+  @apply text-blue italic;
 }
 
 .prose code:not(pre code) {
@@ -179,7 +203,7 @@
 }
 
 .prose blockquote {
-  @apply border-l-4 border-cyan pl-4 my-4 text-grey italic;
+  @apply border-l-4 border-grey pl-4 my-4 text-grey;
 }
 
 .prose ul,
@@ -192,49 +216,57 @@
 }
 
 .prose li::marker {
-  @apply text-green;
+  @apply text-grey;
 }
 
 .prose hr {
   @apply border-border my-8;
 }
 
-/* Alert styles */
-.alert {
+.prose table {
+  @apply w-full my-4 border-collapse;
+}
+
+.prose th {
+  @apply text-grey font-bold text-left px-2 py-1;
+}
+
+.prose td {
+  @apply text-grey/70 px-2 py-1;
+}
+
+/* GFM alert styles */
+.markdown-alert {
   @apply border-l-4 pl-4 py-3 my-6 text-sm;
 }
 
-.alert-label {
+.markdown-alert-title {
   @apply font-bold uppercase tracking-wider text-xs block mb-1;
 }
 
-.alert-info {
+.markdown-alert .octicon {
+  @apply hidden;
+}
+
+.markdown-alert-note {
   @apply border-blue text-grey;
+  .markdown-alert-title {
+    @apply text-blue;
+  }
 }
 
-.alert-info .alert-label {
-  @apply text-blue;
-}
-
-.alert-warning {
-  @apply border-yellow text-grey;
-}
-
-.alert-warning .alert-label {
-  @apply text-yellow;
-}
-
-.alert-tip {
+.markdown-alert-tip {
   @apply border-green text-grey;
+  .markdown-alert-title {
+    @apply text-green;
+  }
 }
 
-.alert-tip .alert-label {
-  @apply text-green;
-}
-
-/* GitHub card styles */
-.github-card {
-  @apply text-cyan hover:text-blue transition-colors no-underline;
+.markdown-alert-warning {
+  @apply border-yellow text-grey;
+  .markdown-alert-title {
+    @apply text-yellow;
+  }
 }
 
 /* Selection */

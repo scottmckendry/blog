@@ -81,4 +81,4 @@ Using the [SecretManagement & SecretStore](https://devblogs.microsoft.com/power
 
 You'll notice that the repository name is not "PowerShell Profile" and is instead "Windots". Windots is a short form for Windows dotfiles. Dotfiles are a Linux convention for storing configuration files. Though this is not commonplace on Windows, I intend to hack together more centralised configurations for my Windows environments. Hopefully easing the pain of switching between and setting up machines.
 
-{{< github repo="scottmckendry/Windots" >}}
+https://github.com/scottmckendry/Windots
