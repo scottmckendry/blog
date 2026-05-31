@@ -3,7 +3,6 @@ title: "A Makeshift Bitwarden Credential Sync Solution for Docker"
 date: 2023-02-02
 tags: ["docker", "bitwarden"]
 summary: "A simple approach for managing docker-compose passwords and keys 🔑"
-url: "/docker-secret-management/"
 ---
 
 I run several docker containers – all with docker-compose. All of my compose files are in a GitHub repository. However, I'm forced to keep this repository private due to some compose files containing passwords and API keys in plain text.

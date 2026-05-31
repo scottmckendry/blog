@@ -3,7 +3,6 @@ title: 'How to "Actually" Audit SharePoint Permissions'
 date: 2023-12-29
 tags: ["powershell", "sharepoint"]
 summary: "A PowerShell script to audit SharePoint permissions and export the results to a CSV file 🔍"
-url: "/sp-permissions-audit/"
 ---
 
 I was recently tasked with auditing the permissions for a few users in a SharePoint Online tenancy. SharePoint does not ship with any built in capability (that I'm aware of) to perform something like this at a tenant level.

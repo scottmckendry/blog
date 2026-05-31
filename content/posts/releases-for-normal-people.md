@@ -3,7 +3,6 @@ title: "Releases for Normal People"
 date: 2025-01-23
 tags: ["devops", "ai"]
 summary: "A technical approach to non-technical release notes"
-url: "/releases-for-normal-people/"
 ---
 
 Release notes are a crucial communication tool between development teams and users. But creating good ones - especially for non-technical audiences - can be challenging.

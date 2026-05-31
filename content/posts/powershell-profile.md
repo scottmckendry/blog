@@ -3,7 +3,6 @@ title: "The Ultimate PowerShell Profile"
 date: 2023-07-16
 tags: ["powershell", "windows", "dotfiles"]
 summary: 'Putting the "Power" back into PowerShell with custom functions and aliases 💪'
-url: "/the-ultimate-powershell-profile/"
 ---
 
 > A man is only as good as his tools.  

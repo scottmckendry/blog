@@ -16,7 +16,6 @@ export interface PostFrontmatter {
   date: string;
   tags: string[];
   summary: string;
-  url?: string;
 }
 
 export interface Post {

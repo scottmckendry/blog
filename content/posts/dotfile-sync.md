@@ -3,7 +3,6 @@ title: "How I Sync My Dotfiles Between Windows and Linux Using GitHub Actions"
 date: 2023-09-14
 tags: ["windows", "linux", "github", "dotfiles"]
 summary: "Dotfile Harmony: GitHub Actions in 'Action' 🚀"
-url: "/how-i-sync-my-dotfiles-between-windows-and-linux-using-github-actions/"
 ---
 
 I love tinkering with my operating system and tools. I find it a fun way to spend my time, and it helps me stay "_productive_". However, I don't like rework. I hate having to make the same changes to my configuration files on multiple machines.

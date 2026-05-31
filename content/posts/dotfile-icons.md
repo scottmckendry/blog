@@ -3,7 +3,6 @@ title: "Custom Prompt Status Icons Using Starship"
 date: 2024-02-18
 tags: ["dotfiles", "bash", "powershell"]
 summary: "My attempt at minimal, *cross-platform* status icons for my terminal prompt 🔔"
-url: "/dotfile-icons/"
 ---
 
 My dotfiles are a labour of love. With over [200 commits](https://github.com/scottmckendry/windots/commits/main), you could say that I'm a bit obsessed with tweaking and customising things. The relationship I share with my setup can be summed up in a single quote:
