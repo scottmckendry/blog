@@ -23,7 +23,7 @@ $ uuidgen -7; sleep 2; uuidgen -7
 019e8051-0d4a-7bb6-8fe0-d6c703dccdc8
 ```
 
-We can crack them open with a bit of bash to confirm the embedded timestamps:
+Now, we can use another small script to see the embedded timestamps:
 
 ```shellsession
 $ uuid=$(uuidgen -7)
@@ -33,28 +33,35 @@ $ echo "$uuid -> $ts_ms ms ($(date -d @$((ts_ms/1000)) -u '+%Y-%m-%dT%H:%M:%S').
 019e8051-0563-7103-83f1-6f3403f2cff3 -> 1780269253987 ms (2026-05-31T23:14:13.987Z)
 ```
 
-Now, you may have spotted what I spotted straight away - they both look very similar! This is what allows them to be ordered in a database, especially useful for primary keys sequential data is important.
+Now, you may have spotted what I spotted straight away - they both look very similar! This is what allows them to be ordered in a database, especially useful for primary keys where sequential data is critical.
 
 Most important to my point, they both start with the same character `0`. Which, in turn made me wonder, when will we see the first `1`?
 
 Let's do the maths real quick. The first hex digit covers bits **44-47** of the _48-bit timestamp_. That [nibble](https://en.wikipedia.org/wiki/Nibble) ticks over when the timestamp hits **2^44 ms**:
 
-```shellsession
-$ awk "BEGIN { printf \"%d\n\", 1970 + (2^44 / 1000 / 86400 / 365.2425) }"
-2527
+```python
+# first, how many years from epoch is 2^44 ms?
+print(2**44 / 1000 / 86400 / 365.2425)
+# 557.5
+
+# now add that to 1970 (epoch) to get the year
+print(1970 + 557.5)
+# 2527.5
 ```
 
-Well, looks like I'll be just over 500 in the year 2527 by the time we see that first digit tick over - what a birthday gift! Alternatively, one might wonder when we'll see an `F` as the first hex digit. That takes a bit longer:
+Well, looks like I'll be well over 500 in the year 2527 by the time we see that first digit tick over - can't wait! Alternatively, one might wonder when we'll see an `F` as the first hex digit. That takes a bit longer:
 
-```shellsession
-$ awk "BEGIN { printf \"%d\n\", 1970 + (15 * 2^44 / 1000 / 86400 / 365.2425) }"
-10332
+```python
+# for the nibble to reach F, timestamp must hit 15 * 2^44 ms
+print(15 * 2**44 / 1000 / 86400 / 365.2425)
+# 8362.1
 
-$ awk "BEGIN { printf \"%d\n\", 1970 + (2^48 / 1000 / 86400 / 365.2425) }"
-10889
+# what about the full 48-bit overflow?
+print(2**48 / 1000 / 86400 / 365.2425)
+# 8919.6
 ```
 
-First `F` arrives around year 10332, and the full 48-bit timestamp field overflows around year 10889. Plenty of time.
+First `F` arrives around year 10332, and the full 48-bit timestamp field overflows around year 10890. Plenty of time.
 
 There you go! With ~1.89e22 unique UUIDv7 values available per millisecond, we can generate ordered UUIDs for the next 8,000+ years without a hint of concern. The timestamp field won't overflow for nearly 9,000 years. Plenty of runway.
 
