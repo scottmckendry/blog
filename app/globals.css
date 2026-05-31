@@ -1,0 +1,261 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Cyberdream color palette */
+:root {
+  /* Using cyberdream light mode */
+  --background: #ffffff;
+  --background-alt: #eaeaea;
+  --background-highlight: #acacac;
+  --foreground: #16181a;
+  --grey: #7b8496;
+  --blue: #0057d1;
+  --green: #008b0c;
+  --cyan: #008c99;
+  --red: #d11500;
+  --yellow: #997b00;
+  --magenta: #d100bf;
+  --pink: #f40064;
+  --orange: #d17c00;
+  --purple: #a018ff;
+
+  --card: #ffffff;
+  --card-foreground: #16181a;
+  --popover: #ffffff;
+  --popover-foreground: #16181a;
+  --primary: #0057d1;
+  --primary-foreground: #ffffff;
+  --secondary: #eaeaea;
+  --secondary-foreground: #16181a;
+  --muted: #eaeaea;
+  --muted-foreground: #7b8496;
+  --accent: #008c99;
+  --accent-foreground: #ffffff;
+  --destructive: #d11500;
+  --destructive-foreground: #ffffff;
+  --border: #acacac;
+  --input: #acacac;
+  --ring: #0057d1;
+  --radius: 0rem;
+}
+
+/* Cyberdream dark mode (default) */
+.dark {
+  --background: #16181a;
+  --background-alt: #1e2124;
+  --background-highlight: #3c4048;
+  --foreground: #ffffff;
+  --grey: #7b8496;
+  --blue: #5ea1ff;
+  --green: #5eff6c;
+  --cyan: #5ef1ff;
+  --red: #ff6e5e;
+  --yellow: #f1ff5e;
+  --magenta: #ff5ef1;
+  --pink: #ff5ea0;
+  --orange: #ffbd5e;
+  --purple: #bd5eff;
+
+  --card: #1e2124;
+  --card-foreground: #ffffff;
+  --popover: #1e2124;
+  --popover-foreground: #ffffff;
+  --primary: #5ea1ff;
+  --primary-foreground: #16181a;
+  --secondary: #3c4048;
+  --secondary-foreground: #ffffff;
+  --muted: #1e2124;
+  --muted-foreground: #7b8496;
+  --accent: #5ef1ff;
+  --accent-foreground: #16181a;
+  --destructive: #ff6e5e;
+  --destructive-foreground: #16181a;
+  --border: #3c4048;
+  --input: #3c4048;
+  --ring: #5ea1ff;
+}
+
+@theme inline {
+  --font-sans: "JetBrains Mono", "JetBrains Mono Fallback", monospace;
+  --font-mono: "JetBrains Mono", "JetBrains Mono Fallback", monospace;
+  --color-background: var(--background);
+  --color-background-alt: var(--background-alt);
+  --color-background-highlight: var(--background-highlight);
+  --color-foreground: var(--foreground);
+  --color-grey: var(--grey);
+  --color-blue: var(--blue);
+  --color-green: var(--green);
+  --color-cyan: var(--cyan);
+  --color-red: var(--red);
+  --color-yellow: var(--yellow);
+  --color-magenta: var(--magenta);
+  --color-pink: var(--pink);
+  --color-orange: var(--orange);
+  --color-purple: var(--purple);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius));
+  --radius-md: calc(var(--radius));
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius));
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Terminal-style prose */
+.prose {
+  @apply text-foreground leading-relaxed;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  @apply text-cyan font-bold mt-8 mb-4;
+}
+
+.prose h1::before {
+  content: "# ";
+  @apply text-grey;
+}
+.prose h2::before {
+  content: "## ";
+  @apply text-grey;
+}
+.prose h3::before {
+  content: "### ";
+  @apply text-grey;
+}
+
+.prose p {
+  @apply mb-4;
+}
+
+.prose a {
+  @apply text-blue underline underline-offset-2 hover:text-cyan transition-colors;
+}
+
+.prose strong {
+  @apply text-yellow font-bold;
+}
+
+.prose em {
+  @apply text-magenta italic;
+}
+
+.prose code:not(pre code) {
+  @apply bg-background-alt text-orange px-1.5 py-0.5 text-sm;
+}
+
+.prose pre {
+  @apply bg-background-alt border border-border p-4 my-4 overflow-x-auto;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0 text-sm;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-cyan pl-4 my-4 text-grey italic;
+}
+
+.prose ul,
+.prose ol {
+  @apply my-4 pl-6;
+}
+
+.prose li {
+  @apply mb-2;
+}
+
+.prose li::marker {
+  @apply text-green;
+}
+
+.prose hr {
+  @apply border-border my-8;
+}
+
+/* Alert styles */
+.alert {
+  @apply border-l-4 pl-4 py-3 my-6 text-sm;
+}
+
+.alert-label {
+  @apply font-bold uppercase tracking-wider text-xs block mb-1;
+}
+
+.alert-info {
+  @apply border-blue text-grey;
+}
+
+.alert-info .alert-label {
+  @apply text-blue;
+}
+
+.alert-warning {
+  @apply border-yellow text-grey;
+}
+
+.alert-warning .alert-label {
+  @apply text-yellow;
+}
+
+.alert-tip {
+  @apply border-green text-grey;
+}
+
+.alert-tip .alert-label {
+  @apply text-green;
+}
+
+/* GitHub card styles */
+.github-card {
+  @apply text-cyan hover:text-blue transition-colors no-underline;
+}
+
+/* Selection */
+::selection {
+  @apply bg-cyan/30;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  @apply w-2 h-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-border hover:bg-grey;
+}
+
+/* Shiki code highlighting overrides */
+pre.shiki {
+  @apply bg-background-alt! border border-border p-4 my-4 overflow-x-auto;
+}

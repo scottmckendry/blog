@@ -1,0 +1,32 @@
+{
+  "name": "scottmckendry.tech",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@vercel/analytics": "1.6.1",
+    "gray-matter": "^4.0.3",
+    "next": "16.2.6",
+    "react": "^19",
+    "react-dom": "^19",
+    "rehype-stringify": "^10.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.2",
+    "shiki": "^4.1.0",
+    "unified": "^11.0.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.0",
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "postcss": "^8.5",
+    "tailwindcss": "^4.2.0",
+    "typescript": "5.7.3"
+  }
+}

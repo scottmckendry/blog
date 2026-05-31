@@ -23,18 +23,9 @@
   </a>
 </p>
 
-My personal blog. Built with [Hugo](https://gohugo.io/) and [Blowfish](https://github.com/nunocoracao/blowfish). Hosted on [GitHub Pages](https://pages.github.com/).
+My personal blog. Custom terminal-themed design based on [cyberdream.nvim](https://github.com/scottmckendry/cyberdream.nvim). Built with [Next.js](https://nextjs.org/).
 
 ## Contributing 🤝
+
 If you find a typo, inaccuracy or have a suggestion for a post, feel free to open a pull request or an issue.
 I'm more than happy to credit all contributors, big and small.
-
-## Latest Posts 📬
-<!-- BLOG-POST-LIST:START -->
-- [Releases for Normal People](https://scottmckendry.tech/releases-for-normal-people/)
-- [Custom Prompt Status Icons Using Starship](https://scottmckendry.tech/dotfile-icons/)
-- [How to &quot;Actually&quot; Audit SharePoint Permissions](https://scottmckendry.tech/sp-permissions-audit/)
-- [The 5 Stages of Vim: A Humbling Experience](https://scottmckendry.tech/posts/vim-humbling/)
-- [Moving My Blog From Ghost to Hugo](https://scottmckendry.tech/posts/hugo-blog/)
-- [How I Sync My Dotfiles Between Windows and Linux Using GitHub Actions](https://scottmckendry.tech/how-i-sync-my-dotfiles-between-windows-and-linux-using-github-actions/)
-<!-- BLOG-POST-LIST:END -->
