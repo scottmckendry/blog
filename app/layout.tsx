@@ -20,12 +20,14 @@ export const metadata: Metadata = {
     siteName: "scottmckendry.tech",
     locale: "en_NZ",
     type: "website",
+    images: ["/opengraph-image"],
   },
   twitter: {
     card: "summary_large_image",
     title: "scottmckendry.tech",
     description:
       "building things incorrectly, in public. the way it's meant to be.",
+    images: ["/opengraph-image"],
   },
 };
 
