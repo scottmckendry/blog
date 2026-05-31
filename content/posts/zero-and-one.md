@@ -15,7 +15,7 @@ Even if you don't have a rudimentary understanding of how UUIDs work, keeping a 
 
 Well it got me thinking about probabilities of collision and potential use cases where something like this might be warranted (there are none, don't waste your time) and eventually I moved on to the ordering properties of UUIDv7.
 
-For the uninitiated, **UUIDv7** is shaped much like a conventional **UUIDv4**. However the first 12 hex characters (48 bits) are reserved for a Unix timestamp in milliseconds. Let's generate a couple as an example:
+For the uninitiated, **UUIDv7** ([RFC 9562](https://datatracker.ietf.org/doc/html/rfc9562)) is shaped much like a conventional **UUIDv4**. However the first 12 hex characters (48 bits) are reserved for a Unix timestamp in milliseconds. Let's generate a couple as an example:
 
 ```shellsession
 $ uuidgen -7; sleep 2; uuidgen -7
