@@ -18,7 +18,7 @@
     "remark-github-blockquote-alert": "^2.1.0",
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.2",
-    "shiki": "^4.1.0",
+    "shiki": "^4.2.0",
     "unified": "^11.0.5"
   },
   "devDependencies": {
