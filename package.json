@@ -10,7 +10,7 @@
   "dependencies": {
     "gray-matter": "^4.0.3",
     "mermaid": "^11.15.0",
-    "next": "16.2.7",
+    "next": "16.2.9",
     "react": "^19",
     "react-dom": "^19",
     "rehype-stringify": "^10.0.1",
@@ -18,11 +18,11 @@
     "remark-github-blockquote-alert": "^2.1.0",
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.2",
-    "shiki": "^4.1.0",
+    "shiki": "^4.2.0",
     "unified": "^11.0.5"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.2.0",
+    "@tailwindcss/postcss": "^4.3.1",
     "@types/node": "^25",
     "@types/react": "^19",
     "@types/react-dom": "^19",
